@@ -25,7 +25,9 @@ intake ─┬─ extract ─┐
 | Review gate | code | Prompt injection, unclear claim type, thin story or stacked risk signals go to a person |
 | Ticket and memory | code | Opens the ticket in the right queue, writes a memory note |
 
-**fast** nodes use the question format of [Jev](https://docs.typesafe.ai), TypeSafe's System One model: choice, score and yes or no questions answered in parallel with calibrated probabilities. Set `TYPESAFE_API_KEY` and those nodes call Jev directly. Without it, a small open model (Gemma 4 through OpenRouter) answers the same questions in the same shape, and choice, score and confidence are computed with Jev's published formulas.
+**fast** nodes use the question format of [Jev](https://docs.typesafe.ai), TypeSafe's System One model: choice, score and yes or no questions answered in parallel with calibrated probabilities. With `TYPESAFE_API_KEY` set those nodes call Jev directly. Without it, a small open model (Gemma 4 through OpenRouter) answers the same questions in the same shape, and choice, score and confidence are computed with Jev's published formulas.
+
+On the 13 case eval set, Jev routes 13 of 13 with a median run of about 2.5s. The open model stand-in routed 12 of 13 with a median of 14.6s.
 
 **A model never decides eligibility, the deductible, or whether a person needs to look.** Those are code, so the same claim always routes the same way and a reviewer can read why.
 

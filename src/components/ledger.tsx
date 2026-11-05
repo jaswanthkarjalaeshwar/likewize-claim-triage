@@ -73,9 +73,9 @@ export function Ledger({ state }: { state: RunState }) {
 
       <div className="trace-note">
         <p>
-          <b>fast</b> nodes are typed judgments with probabilities. They run on Jev&apos;s question format; until a TypeSafe key is
-          set, a small open model answers in the same shape. <b>reason</b> nodes run on DeepSeek. <b>code</b> nodes are plain
-          functions, so eligibility and routing never depend on a model.
+          <b>fast</b> nodes are typed judgments with calibrated probabilities from Jev, TypeSafe&apos;s System One model, with a small
+          open model as a fallback in the same shape. <b>reason</b> nodes run on DeepSeek. <b>code</b> nodes are plain functions, so
+          eligibility and routing never depend on a model.
         </p>
         <p>Every run is also exported as a trace to Langfuse, one span per node with tokens, cost and latency.</p>
       </div>

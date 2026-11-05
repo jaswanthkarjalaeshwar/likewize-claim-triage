@@ -96,6 +96,11 @@ export default function Evals() {
           graph is built so that path needs every rule to pass in code first.
         </p>
         <p>
+          The first version ran the fast nodes on a small open model standing in for Jev: 12 of 13 routed as expected, 14.6s median,
+          about $0.0014 a claim. The miss was the flood claim, where it split between liquid damage and natural disaster and sent the
+          claim to a handler. On Jev the same graph routes all 13, in a fraction of the time.
+        </p>
+        <p>
           Rerun it with <span className="mono">npm run eval</span>. Each run is saved with its full event stream, which is also what
           the <Link href="/">Desk</Link> replays.
         </p>

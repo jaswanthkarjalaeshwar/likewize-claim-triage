@@ -46,9 +46,10 @@ export default function How() {
           Most of the decisions in a claim are snap judgments: is this theft or loss, is this person trying to game the system, does this
           sentence match that clause. Those want a fast, calibrated classifier that returns a probability my code can put a threshold on.
           That is what <strong>Jev</strong>, TypeSafe&apos;s System One model, is built for, and the intake, retrieval and verification
-          nodes speak its question format (choice, score and yes or no questions answered in parallel). Until a TypeSafe key is set, a
-          small open model answers the same questions in the same shape, and confidence is computed with Jev&apos;s published formulas,
-          so switching over is one environment variable.
+          nodes call it directly (choice, score and yes or no questions answered in parallel). If TypeSafe is unreachable, a small open
+          model answers the same questions in the same shape, with confidence computed from Jev&apos;s published formulas. On the eval set,
+          moving these nodes from the open model to Jev took routing from 12 of 13 to 13 of 13 and the median run from 14.6s to about
+          2.5s.
         </p>
         <p>
           Writing a clear, correct reply to a customer is slow work, so it goes to <strong>DeepSeek</strong>. Both run through

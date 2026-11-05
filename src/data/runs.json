@@ -1,6 +1,6 @@
 {
  "asOf": "2026-11-05",
- "recordedAt": "2026-11-05T17:16:06.509Z",
+ "recordedAt": "2026-11-05T17:39:29.165Z",
  "runs": {
   "glass": {
    "id": "glass",
@@ -33,35 +33,12 @@
     {
      "type": "node",
      "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 549,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0001341,
-      "detail": "Incident on 2026-11-04"
-     },
-     "at": 550
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 2049,
-      "engine": "Mem0",
-      "detail": "4 past notes"
-     },
-     "at": 2050
-    },
-    {
-     "type": "node",
-     "node": {
       "id": "intake",
       "status": "done",
-      "ms": 7879,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00011947,
-      "detail": "cracked glass · 94% confident",
+      "ms": 225,
+      "engine": "jev-1.14.0",
+      "cost": 0.000033684,
+      "detail": "cracked glass · 100% confident",
       "readouts": [
        {
         "question": "Claim type",
@@ -69,11 +46,11 @@
         "dist": [
          {
           "label": "cracked_glass",
-          "p": 0.95
+          "p": 1
          },
          {
           "label": "accidental_damage",
-          "p": 0.05
+          "p": 0
          },
          {
           "label": "liquid_damage",
@@ -84,28 +61,51 @@
           "p": 0
          }
         ],
-        "confidence": 0.94375
+        "confidence": 1
        },
        {
         "question": "Is a claim",
-        "value": "100%"
+        "value": "98%"
        },
        {
         "question": "Instructs the system",
-        "value": "0%"
+        "value": "3%"
        },
        {
         "question": "Specificity",
         "value": "3.0 of 3",
-        "confidence": 1
+        "confidence": 0.99
        },
        {
         "question": "Pushes for outcome",
-        "value": "0%"
+        "value": "14%"
        }
       ]
      },
-     "at": 7880
+     "at": 226
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 725,
+      "engine": "Mem0",
+      "detail": "4 past notes"
+     },
+     "at": 726
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 814,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.00007973,
+      "detail": "Incident on 2026-11-04"
+     },
+     "at": 815
     },
     {
      "type": "node",
@@ -113,37 +113,37 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 7880
+     "at": 815
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 3088,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00005867,
-      "detail": "2 of 4 passages kept",
+      "ms": 81,
+      "engine": "jev-1.14.0",
+      "cost": 0.000031416,
+      "detail": "3 of 4 passages kept",
       "readouts": [
        {
         "question": "FM-4 Mobile phone deductibles",
-        "value": "100%"
+        "value": "96%"
        },
        {
         "question": "FM-2 Claim details",
-        "value": "80%"
+        "value": "46%"
        },
        {
         "question": "FM-6 Market value",
-        "value": "10%"
+        "value": "55%"
        },
        {
         "question": "FM-5 Exclusions",
-        "value": "10%"
+        "value": "33%"
        }
       ]
      },
-     "at": 10968
+     "at": 896
     },
     {
      "type": "node",
@@ -151,18 +151,18 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 10968
+     "at": 896
     },
     {
      "type": "node",
      "node": {
       "id": "rules",
       "status": "done",
-      "ms": 0,
+      "ms": 54,
       "engine": "code",
       "detail": "4 pass · 0 fail · 0 unknown"
      },
-     "at": 10968
+     "at": 950
     },
     {
      "type": "node",
@@ -170,19 +170,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 10968
+     "at": 950
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1304,
+      "ms": 1818,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0007614,
+      "cost": 0.00047401,
       "detail": "4 statements to verify"
      },
-     "at": 12272
+     "at": 2768
     },
     {
      "type": "node",
@@ -190,36 +190,36 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 12272
+     "at": 2768
     },
     {
      "type": "node",
      "node": {
       "id": "verify",
       "status": "done",
-      "ms": 2458,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
+      "ms": 84,
+      "engine": "jev-1.14.0",
       "detail": "4 of 4 supported",
       "readouts": [
        {
-        "question": "Cracked glass is covered under Farmers Mobile Device Protection.",
-        "value": "100%"
+        "question": "Your claim for the shattered front glass on your iPhone 16 Pro is ap…",
+        "value": "98%"
        },
        {
-        "question": "The claim was filed within the 60-day reporting window.",
-        "value": "100%"
+        "question": "The repair is covered under your Farmers Mobile Device Protection pl…",
+        "value": "96%"
        },
        {
-        "question": "The $29 deductible applies for front glass damage.",
-        "value": "100%"
+        "question": "A $29 deductible applies for front glass damage.",
+        "value": "99%"
        },
        {
-        "question": "All necessary documents must be provided within 30 days.",
-        "value": "100%"
+        "question": "Please send photos of the damage and your device IMEI or serial numb…",
+        "value": "87%"
        }
       ]
      },
-     "at": 14730
+     "at": 2852
     },
     {
      "type": "node",
@@ -227,7 +227,7 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 14730
+     "at": 2852
     },
     {
      "type": "node",
@@ -240,11 +240,11 @@
       "readouts": [
        {
         "question": "Risk",
-        "value": "0%"
+        "value": "6%"
        }
       ]
      },
-     "at": 14730
+     "at": 2852
     },
     {
      "type": "node",
@@ -252,7 +252,7 @@
       "id": "act",
       "status": "running"
      },
-     "at": 14730
+     "at": 2852
     },
     {
      "type": "node",
@@ -263,7 +263,7 @@
       "engine": "code",
       "detail": "Ticket LW-261105-3795 · queue claims"
      },
-     "at": 14730
+     "at": 2852
     }
    ],
    "result": {
@@ -277,9 +277,9 @@
      "device": "iPhone 16 Pro"
     },
     "claimType": "cracked_glass",
-    "claimTypeConfidence": 0.94375,
+    "claimTypeConfidence": 1,
     "incidentDate": "2026-11-04",
-    "summary": "Claim approved for cracked front glass on an iPhone 16 Pro under Farmers Mobile Device Protection. Repair fulfillment with a $29 deductible; all eligibility checks passed.",
+    "summary": "Claim approved for cracked front glass on an iPhone 16 Pro under Farmers Mobile Device Protection. Repair is the fulfillment method, with a $29 deductible owed by the customer.",
     "route": "approve",
     "routeReason": "Every eligibility check passed.",
     "fulfillment": "repair",
@@ -324,14 +324,21 @@
       "heading": "Mobile phone deductibles",
       "text": "Deductibles depend on the market value of the phone. Front or back glass: $29 in every tier. Other damage: $29 / $49 / $99 / $199 / $199. Loss and theft: $39 / $59 / $150 / $250 / $300, for market value tiers $0 to $249.99, $250 to $499.99, $500 to $999.99, $1,000 to $1,499.99 and $1,500 to $2,500.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 1
+      "relevance": 0.96
      },
      {
       "id": "FM-2",
       "heading": "Claim details",
       "text": "Claims can be filed immediately after enrollment and must be reported within 60 days of the incident. Customers have 30 days from opening a claim to provide all necessary documentation, otherwise the claim will be closed. A non-refundable deductible is required for all claims.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.8
+      "relevance": 0.46
+     },
+     {
+      "id": "FM-6",
+      "heading": "Market value",
+      "text": "Market value is the amount one would receive if selling the covered device on the open market just before it was lost, stolen, or damaged, based on age, condition, and current market demand.",
+      "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
+      "relevance": 0.55
      },
      {
       "id": "FM-1",
@@ -346,7 +353,7 @@
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf"
      }
     ],
-    "reply": "Hello Maria, your claim for the cracked front glass on your iPhone 16 Pro is approved. The repair is covered under your Farmers Mobile Device Protection plan. A $29 deductible applies. Please send photos of the damage and your device IMEI or serial number within 30 days to keep the claim open. Once we receive these, we will arrange the repair. Likewize Claims",
+    "reply": "Hi Maria, your claim for the shattered front glass on your iPhone 16 Pro is approved. The repair is covered under your Farmers Mobile Device Protection plan. A $29 deductible applies for front glass damage. Please send photos of the damage and your device IMEI or serial number within 30 days to keep your claim open. Once we receive these, we will arrange the repair. Likewize Claims",
     "removed": [],
     "nextSteps": [
      "Send photos of the damaged front glass",
@@ -360,28 +367,28 @@
     ],
     "statements": [
      {
-      "text": "Cracked glass is covered under Farmers Mobile Device Protection.",
+      "text": "Your claim for the shattered front glass on your iPhone 16 Pro is approved.",
+      "clause": "rules",
+      "support": 0.98
+     },
+     {
+      "text": "The repair is covered under your Farmers Mobile Device Protection plan.",
       "clause": "FM-1",
-      "support": 1
+      "support": 0.96
      },
      {
-      "text": "The claim was filed within the 60-day reporting window.",
-      "clause": "FM-2",
-      "support": 1
-     },
-     {
-      "text": "The $29 deductible applies for front glass damage.",
+      "text": "A $29 deductible applies for front glass damage.",
       "clause": "FM-4",
-      "support": 1
+      "support": 0.99
      },
      {
-      "text": "All necessary documents must be provided within 30 days.",
+      "text": "Please send photos of the damage and your device IMEI or serial number within 30 days to keep your claim open.",
       "clause": "FM-2",
-      "support": 1
+      "support": 0.87
      }
     ],
     "risk": {
-     "score": 0,
+     "score": 0.056999999999999995,
      "signals": []
     },
     "memory": [
@@ -391,12 +398,12 @@
      "Agent recorded that on 2026-11-05 a theft claim was routed to human_review after the customer's phone was stolen from their bag at a concert on Saturday night"
     ],
     "totals": {
-     "ms": 14729,
-     "cost": 0.0012072899999999998,
-     "tokens": 4774
+     "ms": 2851,
+     "cost": 0.000671928,
+     "tokens": 4714
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
@@ -432,35 +439,12 @@
     {
      "type": "node",
      "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 497,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.000117,
-      "detail": "Incident on 2026-10-31"
-     },
-     "at": 497
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 659,
-      "engine": "Mem0",
-      "detail": "4 past notes"
-     },
-     "at": 659
-    },
-    {
-     "type": "node",
-     "node": {
       "id": "intake",
       "status": "done",
-      "ms": 6444,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00011893,
-      "detail": "theft · 94% confident",
+      "ms": 273,
+      "engine": "jev-1.14.0",
+      "cost": 0.000033390000000000004,
+      "detail": "theft · 100% confident",
       "readouts": [
        {
         "question": "Claim type",
@@ -468,11 +452,7 @@
         "dist": [
          {
           "label": "theft",
-          "p": 0.95
-         },
-         {
-          "label": "loss",
-          "p": 0.05
+          "p": 1
          },
          {
           "label": "cracked_glass",
@@ -481,30 +461,57 @@
          {
           "label": "accidental_damage",
           "p": 0
+         },
+         {
+          "label": "liquid_damage",
+          "p": 0
          }
         ],
-        "confidence": 0.94375
+        "confidence": 1
        },
        {
         "question": "Is a claim",
-        "value": "100%"
+        "value": "98%"
        },
        {
         "question": "Instructs the system",
-        "value": "0%"
+        "value": "2%"
        },
        {
         "question": "Specificity",
-        "value": "2.9 of 3",
-        "confidence": 0.9
+        "value": "3.0 of 3",
+        "confidence": 0.96
        },
        {
         "question": "Pushes for outcome",
-        "value": "0%"
+        "value": "12%"
        }
       ]
      },
-     "at": 6444
+     "at": 273
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 753,
+      "engine": "Mem0",
+      "detail": "4 past notes"
+     },
+     "at": 753
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 764,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.00006827,
+      "detail": "Incident on 2026-10-31"
+     },
+     "at": 764
     },
     {
      "type": "node",
@@ -512,37 +519,37 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 6444
+     "at": 764
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 4006,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00007193,
+      "ms": 147,
+      "engine": "jev-1.14.0",
+      "cost": 0.000031710000000000006,
       "detail": "4 of 4 passages kept",
       "readouts": [
        {
         "question": "FM-6 Market value",
-        "value": "80%"
+        "value": "69%"
        },
        {
         "question": "FM-4 Mobile phone deductibles",
-        "value": "95%"
+        "value": "92%"
        },
        {
         "question": "FM-2 Claim details",
-        "value": "70%"
+        "value": "58%"
        },
        {
         "question": "FM-1 What is covered",
-        "value": "95%"
+        "value": "92%"
        }
       ]
      },
-     "at": 10450
+     "at": 911
     },
     {
      "type": "node",
@@ -550,18 +557,18 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 10450
+     "at": 911
     },
     {
      "type": "node",
      "node": {
       "id": "rules",
       "status": "done",
-      "ms": 1,
+      "ms": 0,
       "engine": "code",
       "detail": "4 pass · 0 fail · 0 unknown"
      },
-     "at": 10451
+     "at": 911
     },
     {
      "type": "node",
@@ -569,19 +576,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 10451
+     "at": 911
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1293,
+      "ms": 3355,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0008208,
+      "cost": 0.00050948,
       "detail": "4 statements to verify"
      },
-     "at": 11744
+     "at": 4266
     },
     {
      "type": "node",
@@ -589,36 +596,36 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 11744
+     "at": 4266
     },
     {
      "type": "node",
      "node": {
       "id": "verify",
       "status": "done",
-      "ms": 2461,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "detail": "4 of 4 supported",
+      "ms": 1537,
+      "engine": "jev-1.14.0",
+      "detail": "4 of 4 supported, one rewrite",
       "readouts": [
        {
         "question": "Theft is covered under Farmers Mobile Device Protection.",
-        "value": "100%"
+        "value": "97%"
        },
        {
-        "question": "Your claim was filed within the 60-day limit.",
-        "value": "100%"
+        "question": "The incident was reported within the 60-day window.",
+        "value": "95%"
        },
        {
-        "question": "Your replacement is subject to a $150 deductible.",
-        "value": "100%"
+        "question": "A $150 deductible applies.",
+        "value": "94%"
        },
        {
-        "question": "Please send a police report for the theft and your device IMEI or se…",
-        "value": "100%"
+        "question": "Please send a police report and your device IMEI or serial number wi…",
+        "value": "72%"
        }
       ]
      },
-     "at": 14205
+     "at": 5803
     },
     {
      "type": "node",
@@ -626,7 +633,7 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 14205
+     "at": 5803
     },
     {
      "type": "node",
@@ -639,11 +646,11 @@
       "readouts": [
        {
         "question": "Risk",
-        "value": "1%"
+        "value": "5%"
        }
       ]
      },
-     "at": 14205
+     "at": 5803
     },
     {
      "type": "node",
@@ -651,18 +658,18 @@
       "id": "act",
       "status": "running"
      },
-     "at": 14205
+     "at": 5803
     },
     {
      "type": "node",
      "node": {
       "id": "act",
       "status": "done",
-      "ms": 0,
+      "ms": 1,
       "engine": "code",
       "detail": "Ticket LW-261105-7672 · queue claims"
      },
-     "at": 14205
+     "at": 5804
     }
    ],
    "result": {
@@ -676,9 +683,9 @@
      "device": "iPhone 16 Pro"
     },
     "claimType": "theft",
-    "claimTypeConfidence": 0.94375,
+    "claimTypeConfidence": 1,
     "incidentDate": "2026-10-31",
-    "summary": "Theft claim approved under Farmers Mobile Device Protection; all eligibility checks passed. Fulfillment is replacement with a $150 deductible, and the customer must provide the police report and device IMEI or serial number.",
+    "summary": "Theft claim approved under Farmers Mobile Device Protection. All eligibility checks passed; replacement with a $150 deductible applies.",
     "route": "approve",
     "routeReason": "Every eligibility check passed.",
     "fulfillment": "replace",
@@ -723,28 +730,28 @@
       "heading": "Market value",
       "text": "Market value is the amount one would receive if selling the covered device on the open market just before it was lost, stolen, or damaged, based on age, condition, and current market demand.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.8
+      "relevance": 0.69
      },
      {
       "id": "FM-4",
       "heading": "Mobile phone deductibles",
       "text": "Deductibles depend on the market value of the phone. Front or back glass: $29 in every tier. Other damage: $29 / $49 / $99 / $199 / $199. Loss and theft: $39 / $59 / $150 / $250 / $300, for market value tiers $0 to $249.99, $250 to $499.99, $500 to $999.99, $1,000 to $1,499.99 and $1,500 to $2,500.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.95
+      "relevance": 0.92
      },
      {
       "id": "FM-2",
       "heading": "Claim details",
       "text": "Claims can be filed immediately after enrollment and must be reported within 60 days of the incident. Customers have 30 days from opening a claim to provide all necessary documentation, otherwise the claim will be closed. A non-refundable deductible is required for all claims.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.7
+      "relevance": 0.58
      },
      {
       "id": "FM-1",
       "heading": "What is covered",
       "text": "Mobile phones are repaired, replaced or reimbursed at market value for Accidental Damage from Handling and for Mechanical or Electrical Breakdown, and are also reimbursed or replaced due to Loss and Theft. Up to 4 mobile phones per household.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.95
+      "relevance": 0.92
      },
      {
       "id": "FM-3",
@@ -753,13 +760,13 @@
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf"
      }
     ],
-    "reply": "Hello Maria, we approved your theft claim for the iPhone 16 Pro. Theft is covered under your plan, and your claim was filed within the 60-day limit. Your replacement is subject to a $150 deductible. Please send a police report for the theft and your device IMEI or serial number within 30 days. Once we receive these, we will arrange your replacement. Likewize Claims",
+    "reply": "Dear Maria, we have approved your theft claim for your iPhone 16 Pro. The incident was reported within the 60-day window, and theft is covered under your plan. A $150 deductible applies. Please send a police report and your device IMEI or serial number within 30 days. Once we receive these, we will arrange a replacement. Likewize Claims",
     "removed": [],
     "nextSteps": [
-     "Send a copy of the police report for the theft.",
-     "Send your device IMEI or serial number.",
-     "Pay the $150 deductible when requested.",
-     "Submit the documents within 30 days to keep the claim open."
+     "Send a copy of the police report",
+     "Provide your device IMEI or serial number",
+     "Pay the $150 deductible",
+     "Submit documents within 30 days"
     ],
     "documents": [
      "Photos of the damage, or a police report for theft",
@@ -769,26 +776,26 @@
      {
       "text": "Theft is covered under Farmers Mobile Device Protection.",
       "clause": "FM-1",
-      "support": 1
+      "support": 0.97
      },
      {
-      "text": "Your claim was filed within the 60-day limit.",
+      "text": "The incident was reported within the 60-day window.",
       "clause": "FM-2",
-      "support": 1
+      "support": 0.95
      },
      {
-      "text": "Your replacement is subject to a $150 deductible.",
+      "text": "A $150 deductible applies.",
       "clause": "FM-4",
-      "support": 1
+      "support": 0.94
      },
      {
-      "text": "Please send a police report for the theft and your device IMEI or serial number within 30 days.",
+      "text": "Please send a police report and your device IMEI or serial number within 30 days.",
       "clause": "FM-2",
-      "support": 1
+      "support": 0.72
      }
     ],
     "risk": {
-     "score": 0.009999999999999964,
+     "score": 0.05199999999999999,
      "signals": []
     },
     "memory": [
@@ -798,12 +805,12 @@
      "Agent recorded that on 2026-11-05 a theft claim was routed to human_review after the customer's phone was stolen from their bag at a concert on Saturday night"
     ],
     "totals": {
-     "ms": 14205,
-     "cost": 0.00126117,
-     "tokens": 4895
+     "ms": 5804,
+     "cost": 0.001010634,
+     "tokens": 7839
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
@@ -839,35 +846,12 @@
     {
      "type": "node",
      "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 653,
-      "engine": "Mem0",
-      "detail": "2 past notes"
-     },
-     "at": 653
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 837,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0001311,
-      "detail": "Incident on 2026-10-29"
-     },
-     "at": 837
-    },
-    {
-     "type": "node",
-     "node": {
       "id": "intake",
       "status": "done",
-      "ms": 5301,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.0001384,
-      "detail": "loss · 94% confident",
+      "ms": 202,
+      "engine": "jev-1.14.0",
+      "cost": 0.000033474,
+      "detail": "loss · 100% confident",
       "readouts": [
        {
         "question": "Claim type",
@@ -875,11 +859,7 @@
         "dist": [
          {
           "label": "loss",
-          "p": 0.95
-         },
-         {
-          "label": "theft",
-          "p": 0.05
+          "p": 1
          },
          {
           "label": "cracked_glass",
@@ -888,30 +868,57 @@
          {
           "label": "accidental_damage",
           "p": 0
+         },
+         {
+          "label": "liquid_damage",
+          "p": 0
          }
         ],
-        "confidence": 0.94375
+        "confidence": 1
        },
        {
         "question": "Is a claim",
-        "value": "100%"
+        "value": "98%"
        },
        {
         "question": "Instructs the system",
-        "value": "0%"
+        "value": "2%"
        },
        {
         "question": "Specificity",
-        "value": "2.2 of 3",
-        "confidence": 0.8
+        "value": "2.9 of 3",
+        "confidence": 0.9
        },
        {
         "question": "Pushes for outcome",
-        "value": "0%"
+        "value": "13%"
        }
       ]
      },
-     "at": 5301
+     "at": 202
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 677,
+      "engine": "Mem0",
+      "detail": "2 past notes"
+     },
+     "at": 677
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 785,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.00007599,
+      "detail": "Incident on 2026-10-29"
+     },
+     "at": 785
     },
     {
      "type": "node",
@@ -919,37 +926,37 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 5302
+     "at": 785
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 2491,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.0000939,
+      "ms": 129,
+      "engine": "jev-1.14.0",
+      "cost": 0.00003213,
       "detail": "4 of 4 passages kept",
       "readouts": [
        {
         "question": "FM-4 Mobile phone deductibles",
-        "value": "95%"
+        "value": "94%"
        },
        {
         "question": "FM-6 Market value",
-        "value": "70%"
+        "value": "65%"
        },
        {
         "question": "FM-1 What is covered",
-        "value": "90%"
+        "value": "82%"
        },
        {
         "question": "FM-2 Claim details",
-        "value": "80%"
+        "value": "61%"
        }
       ]
      },
-     "at": 7793
+     "at": 914
     },
     {
      "type": "node",
@@ -957,18 +964,18 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 7793
+     "at": 914
     },
     {
      "type": "node",
      "node": {
       "id": "rules",
       "status": "done",
-      "ms": 31,
+      "ms": 0,
       "engine": "code",
       "detail": "3 pass · 1 fail · 0 unknown"
      },
-     "at": 7824
+     "at": 914
     },
     {
      "type": "node",
@@ -976,19 +983,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 7824
+     "at": 914
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1501,
+      "ms": 1483,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0008205,
+      "cost": 0.000453336,
       "detail": "4 statements to verify"
      },
-     "at": 9325
+     "at": 2397
     },
     {
      "type": "node",
@@ -996,36 +1003,36 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 9325
+     "at": 2397
     },
     {
      "type": "node",
      "node": {
       "id": "verify",
       "status": "done",
-      "ms": 3226,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
+      "ms": 75,
+      "engine": "jev-1.14.0",
       "detail": "4 of 4 supported",
       "readouts": [
        {
-        "question": "Loss is covered under your plan.",
-        "value": "100%"
+        "question": "Loss is a covered peril under your Farmers Mobile Device Protection …",
+        "value": "97%"
        },
        {
         "question": "The claim was filed within the 60-day window.",
-        "value": "100%"
+        "value": "85%"
        },
        {
         "question": "Your plan allows 2 approved loss or theft claims in any rolling 12-m…",
-        "value": "100%"
+        "value": "96%"
        },
        {
         "question": "We cannot approve this claim.",
-        "value": "100%"
+        "value": "97%"
        }
       ]
      },
-     "at": 12552
+     "at": 2472
     },
     {
      "type": "node",
@@ -1033,7 +1040,7 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 12552
+     "at": 2472
     },
     {
      "type": "node",
@@ -1046,11 +1053,11 @@
       "readouts": [
        {
         "question": "Risk",
-        "value": "8%"
+        "value": "6%"
        }
       ]
      },
-     "at": 12552
+     "at": 2472
     },
     {
      "type": "node",
@@ -1058,18 +1065,18 @@
       "id": "act",
       "status": "running"
      },
-     "at": 12552
+     "at": 2472
     },
     {
      "type": "node",
      "node": {
       "id": "act",
       "status": "done",
-      "ms": 0,
+      "ms": 1,
       "engine": "code",
       "detail": "Ticket LW-261105-5544 · queue claims"
      },
-     "at": 12552
+     "at": 2473
     }
    ],
    "result": {
@@ -1083,9 +1090,9 @@
      "device": "Galaxy S26 Ultra"
     },
     "claimType": "loss",
-    "claimTypeConfidence": 0.94375,
+    "claimTypeConfidence": 1,
     "incidentDate": "2026-10-29",
-    "summary": "Loss claim for a Galaxy S26 Ultra reported 2026-10-29, filed 7 days later, within the 60-day window under FM-2. Denied under FM-3 because 2 of 2 loss or theft claims have been used in the last 12 months; coverage and the $2,500 cap are otherwise met.",
+    "summary": "Loss claim for Aisha's Galaxy S26 Ultra, incident 2026-10-29, filed 7 days later, so the 60-day window (FM-2) and covered peril (FM-1) checks pass. Denied under FM-3 because 2 of 2 loss or theft claims have been used in the last 12 months; no fulfillment is due.",
     "route": "deny",
     "routeReason": "2 of 2 loss or theft claims used in the last 12 months",
     "fulfillment": "none",
@@ -1125,28 +1132,28 @@
       "heading": "Mobile phone deductibles",
       "text": "Deductibles depend on the market value of the phone. Front or back glass: $29 in every tier. Other damage: $29 / $49 / $99 / $199 / $199. Loss and theft: $39 / $59 / $150 / $250 / $300, for market value tiers $0 to $249.99, $250 to $499.99, $500 to $999.99, $1,000 to $1,499.99 and $1,500 to $2,500.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.95
+      "relevance": 0.94
      },
      {
       "id": "FM-6",
       "heading": "Market value",
       "text": "Market value is the amount one would receive if selling the covered device on the open market just before it was lost, stolen, or damaged, based on age, condition, and current market demand.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.7
+      "relevance": 0.65
      },
      {
       "id": "FM-1",
       "heading": "What is covered",
       "text": "Mobile phones are repaired, replaced or reimbursed at market value for Accidental Damage from Handling and for Mechanical or Electrical Breakdown, and are also reimbursed or replaced due to Loss and Theft. Up to 4 mobile phones per household.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.9
+      "relevance": 0.82
      },
      {
       "id": "FM-2",
       "heading": "Claim details",
       "text": "Claims can be filed immediately after enrollment and must be reported within 60 days of the incident. Customers have 30 days from opening a claim to provide all necessary documentation, otherwise the claim will be closed. A non-refundable deductible is required for all claims.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.8
+      "relevance": 0.61
      },
      {
       "id": "FM-3",
@@ -1155,39 +1162,39 @@
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf"
      }
     ],
-    "reply": "Dear Aisha, we reviewed your claim for the Galaxy S26 Ultra lost on the train on 2026-10-29. Loss is covered under your plan, and the claim was filed within the 60-day window. However, your plan allows 2 approved loss or theft claims in any rolling 12-month period, and both have been used. We cannot approve this claim. No deductible applies because the claim is not approved. Likewize Claims",
+    "reply": "Dear Aisha, we reviewed your claim for the Galaxy S26 Ultra lost on the train on October 29, 2026. Loss is a covered peril under your Farmers Mobile Device Protection plan, and the claim was filed within the 60-day window. However, your plan allows 2 approved loss or theft claims in any rolling 12-month period, and both have been used. We cannot approve this claim. Likewize Claims",
     "removed": [],
     "nextSteps": [
      "Keep your device IMEI or serial number on file",
-     "Report the loss to your carrier if you have not already",
-     "Contact Farmers if you believe the claim count is incorrect",
-     "Reapply once your rolling 12-month claim limit resets"
+     "Report the loss to your carrier to block the device",
+     "Contact Farmers if you believe the prior claim count is wrong",
+     "Reach out with any new information about the device"
     ],
     "documents": [],
     "statements": [
      {
-      "text": "Loss is covered under your plan.",
+      "text": "Loss is a covered peril under your Farmers Mobile Device Protection plan.",
       "clause": "FM-1",
-      "support": 1
+      "support": 0.97
      },
      {
       "text": "The claim was filed within the 60-day window.",
       "clause": "FM-2",
-      "support": 1
+      "support": 0.85
      },
      {
       "text": "Your plan allows 2 approved loss or theft claims in any rolling 12-month period, and both have been used.",
       "clause": "FM-3",
-      "support": 1
+      "support": 0.96
      },
      {
       "text": "We cannot approve this claim.",
       "clause": "rules",
-      "support": 1
+      "support": 0.97
      }
     ],
     "risk": {
-     "score": 0.07999999999999997,
+     "score": 0.062,
      "signals": []
     },
     "memory": [
@@ -1195,12 +1202,12 @@
      "Agent recorded that on 2026-11-05 a loss claim was denied after the customer's phone was lost on a train on 2026-11-03, was tracked for a while, and then went offline"
     ],
     "totals": {
-     "ms": 12553,
-     "cost": 0.00131437,
-     "tokens": 4787
+     "ms": 2473,
+     "cost": 0.000646926,
+     "tokens": 4643
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
@@ -1236,35 +1243,12 @@
     {
      "type": "node",
      "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 579,
-      "engine": "Mem0",
-      "detail": "1 past notes"
-     },
-     "at": 579
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 692,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0001203,
-      "detail": "Incident on 2026-11-05"
-     },
-     "at": 692
-    },
-    {
-     "type": "node",
-     "node": {
       "id": "intake",
       "status": "done",
-      "ms": 8052,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00011797,
-      "detail": "cracked glass · 89% confident",
+      "ms": 221,
+      "engine": "jev-1.14.0",
+      "cost": 0.000033138,
+      "detail": "cracked glass · 94% confident",
       "readouts": [
        {
         "question": "Claim type",
@@ -1272,11 +1256,11 @@
         "dist": [
          {
           "label": "cracked_glass",
-          "p": 0.9
+          "p": 0.95
          },
          {
           "label": "accidental_damage",
-          "p": 0.1
+          "p": 0.05
          },
          {
           "label": "liquid_damage",
@@ -1287,28 +1271,51 @@
           "p": 0
          }
         ],
-        "confidence": 0.8875000000000002
+        "confidence": 0.94
        },
        {
         "question": "Is a claim",
-        "value": "100%"
+        "value": "98%"
        },
        {
         "question": "Instructs the system",
-        "value": "0%"
+        "value": "2%"
        },
        {
         "question": "Specificity",
-        "value": "2.9 of 3",
-        "confidence": 0.9
+        "value": "3.0 of 3",
+        "confidence": 1
        },
        {
         "question": "Pushes for outcome",
-        "value": "0%"
+        "value": "10%"
        }
       ]
      },
-     "at": 8052
+     "at": 221
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 603,
+      "engine": "Mem0",
+      "detail": "1 past note"
+     },
+     "at": 603
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 737,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.00007263,
+      "detail": "Incident on 2026-11-05"
+     },
+     "at": 737
     },
     {
      "type": "node",
@@ -1316,37 +1323,37 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 8052
+     "at": 737
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 4528,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.0000652,
+      "ms": 174,
+      "engine": "jev-1.14.0",
+      "cost": 0.000026292000000000002,
       "detail": "4 of 4 passages kept",
       "readouts": [
        {
         "question": "DC-5 Processing fees",
-        "value": "95%"
-       },
-       {
-        "question": "DC-2 Claim limits",
-        "value": "90%"
-       },
-       {
-        "question": "DC-3 Filing window",
-        "value": "80%"
+        "value": "89%"
        },
        {
         "question": "DC-4 When coverage starts",
-        "value": "70%"
+        "value": "47%"
+       },
+       {
+        "question": "DC-3 Filing window",
+        "value": "71%"
+       },
+       {
+        "question": "DC-2 Claim limits",
+        "value": "78%"
        }
       ]
      },
-     "at": 12580
+     "at": 911
     },
     {
      "type": "node",
@@ -1354,7 +1361,7 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 12580
+     "at": 911
     },
     {
      "type": "node",
@@ -1365,7 +1372,7 @@
       "engine": "code",
       "detail": "4 pass · 1 fail · 0 unknown"
      },
-     "at": 12580
+     "at": 911
     },
     {
      "type": "node",
@@ -1373,19 +1380,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 12581
+     "at": 911
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1380,
+      "ms": 1755,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0008244,
+      "cost": 0.0004651,
       "detail": "4 statements to verify"
      },
-     "at": 13961
+     "at": 2666
     },
     {
      "type": "node",
@@ -1393,36 +1400,36 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 13961
+     "at": 2666
     },
     {
      "type": "node",
      "node": {
       "id": "verify",
       "status": "done",
-      "ms": 8001,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "detail": "4 of 4 supported, one rewrite",
+      "ms": 94,
+      "engine": "jev-1.14.0",
+      "detail": "4 of 4 supported",
       "readouts": [
        {
-        "question": "The cracked screen is a covered peril under Device Care.",
-        "value": "100%"
+        "question": "Cracked glass is covered under Device Care.",
+        "value": "70%"
        },
        {
-        "question": "You filed within the 60-day window.",
-        "value": "100%"
+        "question": "Your device was enrolled on 2026-10-20 as a bring-your-own device, a…",
+        "value": "96%"
        },
        {
-        "question": "Your device was enrolled as a bring-your-own device on 2026-10-20.",
-        "value": "100%"
+        "question": "The incident on 2026-11-05 was day 16, so coverage had not started.",
+        "value": "79%"
        },
        {
-        "question": "Coverage for bring-your-own devices begins 31 days after enrollment,…",
-        "value": "100%"
+        "question": "The claim is denied.",
+        "value": "98%"
        }
       ]
      },
-     "at": 21962
+     "at": 2760
     },
     {
      "type": "node",
@@ -1430,7 +1437,7 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 21962
+     "at": 2760
     },
     {
      "type": "node",
@@ -1443,7 +1450,7 @@
       "readouts": [
        {
         "question": "Risk",
-        "value": "31%"
+        "value": "34%"
        },
        {
         "question": "Incident within 30 days of enrollment",
@@ -1451,7 +1458,7 @@
        }
       ]
      },
-     "at": 21962
+     "at": 2760
     },
     {
      "type": "node",
@@ -1459,7 +1466,7 @@
       "id": "act",
       "status": "running"
      },
-     "at": 21962
+     "at": 2760
     },
     {
      "type": "node",
@@ -1470,7 +1477,7 @@
       "engine": "code",
       "detail": "Ticket LW-261105-8152 · queue claims"
      },
-     "at": 21963
+     "at": 2761
     }
    ],
    "result": {
@@ -1484,9 +1491,9 @@
      "device": "Galaxy S25"
     },
     "claimType": "cracked_glass",
-    "claimTypeConfidence": 0.8875000000000002,
+    "claimTypeConfidence": 0.94,
     "incidentDate": "2026-11-05",
-    "summary": "The claim is denied because the device was enrolled as a bring-your-own device on 2026-10-20 and coverage begins 31 days after enrollment, making the incident on day 16 outside the waiting period. The cracked glass itself is a covered peril and the claim was filed within the 60-day window, but the waiting period failure controls the outcome.",
+    "summary": "The claim is denied because the device was enrolled as a bring-your-own device on 2026-10-20 and coverage begins 31 days after enrollment, while the incident occurred on day 16. All other checks pass, but the waiting period failure is decisive under DC-4.",
     "route": "deny",
     "routeReason": "Own device enrolled 2026-10-20; coverage starts after 31 days, incident was day 16",
     "fulfillment": "none",
@@ -1533,28 +1540,28 @@
       "heading": "Processing fees",
       "text": "Processing fees start at $39 for screen repairs and range from $99 to $399 for replacement devices. Repairs are covered by a 90-day warranty.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.95
-     },
-     {
-      "id": "DC-2",
-      "heading": "Claim limits",
-      "text": "Your claim is covered up to the estimated retail value of your device, with a maximum of $3,000. You can file up to two claims within a rolling 12 month period.",
-      "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.9
-     },
-     {
-      "id": "DC-3",
-      "heading": "Filing window",
-      "text": "Claims must be filed within 60 days of the incident, and all required documents, service fees, and fulfillment must be completed within 60 days of filing to keep the claim active. You will need proof of purchase and photos of the damage.",
-      "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.8
+      "relevance": 0.89
      },
      {
       "id": "DC-4",
       "heading": "When coverage starts",
       "text": "If you are enrolling a new device, your coverage starts right away. For bring your own devices, coverage begins 31 days after enrollment.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.7
+      "relevance": 0.47
+     },
+     {
+      "id": "DC-3",
+      "heading": "Filing window",
+      "text": "Claims must be filed within 60 days of the incident, and all required documents, service fees, and fulfillment must be completed within 60 days of filing to keep the claim active. You will need proof of purchase and photos of the damage.",
+      "source": "https://protect.likewize.com/devicecare/",
+      "relevance": 0.71
+     },
+     {
+      "id": "DC-2",
+      "heading": "Claim limits",
+      "text": "Your claim is covered up to the estimated retail value of your device, with a maximum of $3,000. You can file up to two claims within a rolling 12 month period.",
+      "source": "https://protect.likewize.com/devicecare/",
+      "relevance": 0.78
      },
      {
       "id": "DC-1",
@@ -1563,39 +1570,38 @@
       "source": "https://protect.likewize.com/devicecare/"
      }
     ],
-    "reply": "Daniel, we reviewed your claim for the Galaxy S25. The cracked screen is a covered peril under Device Care, and you filed within the 60-day window. However, your device was enrolled as a bring-your-own device on 2026-10-20. Under DC-4, coverage for bring-your-own devices begins 31 days after enrollment. Your incident on 2026-11-05 was day 16, so the claim is denied. No processing fee applies. Likewize Claims",
+    "reply": "Dear Daniel,\n\nWe reviewed your claim for the cracked screen on your Galaxy S25. The claim is denied. Your device was enrolled on 2026-10-20 as a bring-your-own device, and coverage begins 31 days after enrollment. The incident on 2026-11-05 was day 16, so coverage had not started. Cracked glass is otherwise covered under Device Care, but the waiting period applies. No processing fee is due.\n\nLikewize Claims",
     "removed": [],
     "nextSteps": [
-     "Keep your proof of purchase and photos of the damage.",
-     "Note that coverage for this device begins 31 days after 2026-10-20.",
-     "Contact us if you have questions about your enrollment date.",
-     "File a new claim if a future incident occurs after coverage begins."
+     "Wait until 31 days after your enrollment date before filing a new claim for this incident.",
+     "Keep your proof of purchase and photos of the damage for any future claim.",
+     "Contact us if you have questions about your enrollment date or coverage start."
     ],
     "documents": [],
     "statements": [
      {
-      "text": "The cracked screen is a covered peril under Device Care.",
+      "text": "Cracked glass is covered under Device Care.",
       "clause": "DC-1",
-      "support": 1
+      "support": 0.7
      },
      {
-      "text": "You filed within the 60-day window.",
-      "clause": "DC-3",
-      "support": 1
-     },
-     {
-      "text": "Your device was enrolled as a bring-your-own device on 2026-10-20.",
+      "text": "Your device was enrolled on 2026-10-20 as a bring-your-own device, and coverage begins 31 days after enrollment.",
       "clause": "DC-4",
-      "support": 1
+      "support": 0.96
      },
      {
-      "text": "Coverage for bring-your-own devices begins 31 days after enrollment, and your incident on 2026-11-05 was day 16, so the claim is denied.",
+      "text": "The incident on 2026-11-05 was day 16, so coverage had not started.",
       "clause": "DC-4",
-      "support": 1
+      "support": 0.79
+     },
+     {
+      "text": "The claim is denied.",
+      "clause": "rules",
+      "support": 0.98
      }
     ],
     "risk": {
-     "score": 0.30999999999999994,
+     "score": 0.33999999999999997,
      "signals": [
       "Incident within 30 days of enrollment"
      ]
@@ -1604,12 +1610,12 @@
      "Agent recorded that on 2026-11-05 a cracked glass claim was denied after the phone slid off the kitchen counter, resulting in a big crack across the middle of the screen"
     ],
     "totals": {
-     "ms": 21963,
-     "cost": 0.0019812140000000002,
-     "tokens": 7653
+     "ms": 2761,
+     "cost": 0.0006526840000000001,
+     "tokens": 4468
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
@@ -1624,7 +1630,7 @@
       "id": "intake",
       "status": "running"
      },
-     "at": 0
+     "at": 1
     },
     {
      "type": "node",
@@ -1632,7 +1638,7 @@
       "id": "extract",
       "status": "running"
      },
-     "at": 0
+     "at": 1
     },
     {
      "type": "node",
@@ -1640,40 +1646,17 @@
       "id": "memory",
       "status": "running"
      },
-     "at": 0
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 408,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0001239,
-      "detail": "Incident on 2026-11-02"
-     },
-     "at": 408
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 624,
-      "engine": "Mem0",
-      "detail": "1 past notes"
-     },
-     "at": 624
+     "at": 1
     },
     {
      "type": "node",
      "node": {
       "id": "intake",
       "status": "done",
-      "ms": 3456,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00011055,
-      "detail": "mechanical breakdown · 94% confident",
+      "ms": 92,
+      "engine": "jev-1.14.0",
+      "cost": 0.000033096,
+      "detail": "mechanical breakdown · 100% confident",
       "readouts": [
        {
         "question": "Claim type",
@@ -1681,11 +1664,7 @@
         "dist": [
          {
           "label": "mechanical_breakdown",
-          "p": 0.95
-         },
-         {
-          "label": "not_a_claim",
-          "p": 0.05
+          "p": 1
          },
          {
           "label": "cracked_glass",
@@ -1694,30 +1673,57 @@
          {
           "label": "accidental_damage",
           "p": 0
+         },
+         {
+          "label": "liquid_damage",
+          "p": 0
          }
         ],
-        "confidence": 0.94375
+        "confidence": 1
        },
        {
         "question": "Is a claim",
-        "value": "98%"
+        "value": "93%"
        },
        {
         "question": "Instructs the system",
-        "value": "0%"
+        "value": "2%"
        },
        {
         "question": "Specificity",
-        "value": "2.1 of 3",
-        "confidence": 0.85
+        "value": "3.0 of 3",
+        "confidence": 0.98
        },
        {
         "question": "Pushes for outcome",
-        "value": "5%"
+        "value": "15%"
        }
       ]
      },
-     "at": 3456
+     "at": 93
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 451,
+      "engine": "Mem0",
+      "detail": "1 past note"
+     },
+     "at": 452
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 598,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.00007198,
+      "detail": "Incident on 2026-11-02"
+     },
+     "at": 599
     },
     {
      "type": "node",
@@ -1725,37 +1731,37 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 3456
+     "at": 599
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 4316,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00006716,
+      "ms": 81,
+      "engine": "jev-1.14.0",
+      "cost": 0.000026880000000000004,
       "detail": "4 of 4 passages kept",
       "readouts": [
        {
         "question": "DC-1 What Device Care covers",
-        "value": "95%"
+        "value": "84%"
        },
        {
         "question": "DC-3 Filing window",
-        "value": "85%"
+        "value": "45%"
        },
        {
         "question": "DC-5 Processing fees",
-        "value": "80%"
+        "value": "78%"
        },
        {
         "question": "DC-2 Claim limits",
-        "value": "85%"
+        "value": "72%"
        }
       ]
      },
-     "at": 7772
+     "at": 680
     },
     {
      "type": "node",
@@ -1763,18 +1769,18 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 7772
+     "at": 680
     },
     {
      "type": "node",
      "node": {
       "id": "rules",
       "status": "done",
-      "ms": 1,
+      "ms": 0,
       "engine": "code",
       "detail": "3 pass · 1 fail · 0 unknown"
      },
-     "at": 7773
+     "at": 680
     },
     {
      "type": "node",
@@ -1782,19 +1788,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 7773
+     "at": 680
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1328,
+      "ms": 1469,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.000478476,
+      "cost": 0.000386446,
       "detail": "4 statements to verify"
      },
-     "at": 9101
+     "at": 2149
     },
     {
      "type": "node",
@@ -1802,36 +1808,36 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 9101
+     "at": 2149
     },
     {
      "type": "node",
      "node": {
       "id": "verify",
       "status": "done",
-      "ms": 3459,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
+      "ms": 86,
+      "engine": "jev-1.14.0",
       "detail": "4 of 4 supported",
       "readouts": [
        {
         "question": "Mechanical breakdown is covered under Device Care.",
-        "value": "100%"
+        "value": "98%"
        },
        {
         "question": "Your claim was filed within the 60-day filing window.",
-        "value": "100%"
+        "value": "84%"
        },
        {
         "question": "Your plan allows up to two claims in a rolling 12-month period, and …",
-        "value": "100%"
+        "value": "66%"
        },
        {
-        "question": "We cannot approve this claim and no fee applies since no repair or r…",
-        "value": "90%"
+        "question": "We cannot approve this claim.",
+        "value": "96%"
        }
       ]
      },
-     "at": 12560
+     "at": 2235
     },
     {
      "type": "node",
@@ -1839,24 +1845,24 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 12560
+     "at": 2235
     },
     {
      "type": "node",
      "node": {
       "id": "gate",
       "status": "done",
-      "ms": 0,
+      "ms": 1,
       "engine": "code",
       "detail": "Stays deny",
       "readouts": [
        {
         "question": "Risk",
-        "value": "11%"
+        "value": "6%"
        }
       ]
      },
-     "at": 12560
+     "at": 2236
     },
     {
      "type": "node",
@@ -1864,18 +1870,18 @@
       "id": "act",
       "status": "running"
      },
-     "at": 12560
+     "at": 2236
     },
     {
      "type": "node",
      "node": {
       "id": "act",
       "status": "done",
-      "ms": 1,
+      "ms": 0,
       "engine": "code",
       "detail": "Ticket LW-261105-7873 · queue claims"
      },
-     "at": 12561
+     "at": 2236
     }
    ],
    "result": {
@@ -1889,9 +1895,9 @@
      "device": "Pixel 9"
     },
     "claimType": "mechanical_breakdown",
-    "claimTypeConfidence": 0.94375,
+    "claimTypeConfidence": 1,
     "incidentDate": "2026-11-02",
-    "summary": "Mechanical breakdown claim for a Pixel 9 reported on 2026-11-02 is denied because the customer has used 2 of 2 claims allowed in a rolling 12-month period under DC-2. Coverage and filing window checks passed, but the claim limit fails, so no fulfillment is issued.",
+    "summary": "Mechanical breakdown claim for a Pixel 9 reported on 2026-11-02, filed 2026-11-05. Coverage and filing window pass, but the claim is denied under DC-2 because 2 of 2 claims have been used in the last 12 months.",
     "route": "deny",
     "routeReason": "2 of 2 claims used in the last 12 months",
     "fulfillment": "none",
@@ -1931,75 +1937,75 @@
       "heading": "What Device Care covers",
       "text": "Device Care covers accidental damage from handling as well as electrical and mechanical malfunctions that occur after the manufacturer's warranty has expired. Excludes loss, theft, cosmetic damage, and pre-existing issues.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.95
+      "relevance": 0.84
      },
      {
       "id": "DC-3",
       "heading": "Filing window",
       "text": "Claims must be filed within 60 days of the incident, and all required documents, service fees, and fulfillment must be completed within 60 days of filing to keep the claim active. You will need proof of purchase and photos of the damage.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.85
+      "relevance": 0.45
      },
      {
       "id": "DC-5",
       "heading": "Processing fees",
       "text": "Processing fees start at $39 for screen repairs and range from $99 to $399 for replacement devices. Repairs are covered by a 90-day warranty.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.8
+      "relevance": 0.78
      },
      {
       "id": "DC-2",
       "heading": "Claim limits",
       "text": "Your claim is covered up to the estimated retail value of your device, with a maximum of $3,000. You can file up to two claims within a rolling 12 month period.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.85
+      "relevance": 0.72
      }
     ],
-    "reply": "Dear Priya, we reviewed your claim for the Pixel 9. Mechanical breakdown is covered under Device Care, and your claim was filed within the 60-day window. However, your plan allows up to two claims in a rolling 12-month period, and both have been used. We cannot approve this claim. No fee applies since no repair or replacement is issued. You may still have options under your manufacturer's warranty or with the retailer. Likewize Claims",
+    "reply": "Dear Priya, we reviewed your claim for the Pixel 9. Mechanical breakdown is covered under Device Care, and your claim was filed within the 60-day window. However, your plan allows up to two claims in a rolling 12-month period, and both have been used. We cannot approve this claim. You can file again once a claim slot is available. Likewize Claims",
     "removed": [],
     "nextSteps": [
-     "Check whether your Pixel 9 is still under the manufacturer's warranty",
-     "Contact the retailer or Google support about the battery and heat issue",
-     "Keep your proof of purchase and photos of the device",
-     "Contact us again once your rolling 12-month claim window resets"
+     "Keep your proof of purchase and photos of the damage on file",
+     "Check your claim history to confirm when a claim slot becomes available",
+     "Contact us again once a claim slot is available to refile",
+     "Have the device inspected if the battery or heat issue continues"
     ],
     "documents": [],
     "statements": [
      {
       "text": "Mechanical breakdown is covered under Device Care.",
       "clause": "DC-1",
-      "support": 1
+      "support": 0.98
      },
      {
       "text": "Your claim was filed within the 60-day filing window.",
       "clause": "DC-3",
-      "support": 1
+      "support": 0.84
      },
      {
       "text": "Your plan allows up to two claims in a rolling 12-month period, and both have been used.",
       "clause": "DC-2",
-      "support": 1
+      "support": 0.66
      },
      {
-      "text": "We cannot approve this claim and no fee applies since no repair or replacement is issued.",
+      "text": "We cannot approve this claim.",
       "clause": "rules",
-      "support": 0.9
+      "support": 0.96
      }
     ],
     "risk": {
-     "score": 0.105,
+     "score": 0.06200000000000001,
      "signals": []
     },
     "memory": [
      "Agent recorded that on 2026-11-05 a mechanical breakdown claim was denied after the battery, since Monday, November 2, 2026, dropped from 40% to dead in minutes and the phone became very hot while charging"
     ],
     "totals": {
-     "ms": 12561,
-     "cost": 0.0009033559999999999,
-     "tokens": 4234
+     "ms": 2236,
+     "cost": 0.0005657780000000001,
+     "tokens": 4113
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
@@ -2035,35 +2041,12 @@
     {
      "type": "node",
      "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 384,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0001329,
-      "detail": "Incident on 2026-11-03"
-     },
-     "at": 384
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 695,
-      "engine": "Mem0",
-      "detail": "3 past notes"
-     },
-     "at": 695
-    },
-    {
-     "type": "node",
-     "node": {
       "id": "intake",
       "status": "done",
-      "ms": 5678,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00014307,
-      "detail": "liquid damage · 83% confident",
+      "ms": 77,
+      "engine": "jev-1.14.0",
+      "cost": 0.000033432,
+      "detail": "liquid damage · 100% confident",
       "readouts": [
        {
         "question": "Claim type",
@@ -2071,43 +2054,66 @@
         "dist": [
          {
           "label": "liquid_damage",
-          "p": 0.85
-         },
-         {
-          "label": "accidental_damage",
-          "p": 0.1
-         },
-         {
-          "label": "mechanical_breakdown",
-          "p": 0.05
+          "p": 1
          },
          {
           "label": "cracked_glass",
           "p": 0
+         },
+         {
+          "label": "accidental_damage",
+          "p": 0
+         },
+         {
+          "label": "mechanical_breakdown",
+          "p": 0
          }
         ],
-        "confidence": 0.83125
+        "confidence": 1
        },
        {
         "question": "Is a claim",
-        "value": "99%"
+        "value": "97%"
        },
        {
         "question": "Instructs the system",
-        "value": "1%"
+        "value": "2%"
        },
        {
         "question": "Specificity",
-        "value": "2.9 of 3",
-        "confidence": 0.95
+        "value": "3.0 of 3",
+        "confidence": 0.98
        },
        {
         "question": "Pushes for outcome",
-        "value": "5%"
+        "value": "15%"
        }
       ]
      },
-     "at": 5678
+     "at": 77
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 414,
+      "engine": "Mem0",
+      "detail": "3 past notes"
+     },
+     "at": 414
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 784,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.000057849,
+      "detail": "Incident on 2026-11-03"
+     },
+     "at": 784
     },
     {
      "type": "node",
@@ -2115,21 +2121,21 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 5678
+     "at": 784
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 2952,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.0000561,
+      "ms": 83,
+      "engine": "jev-1.14.0",
+      "cost": 0.00002877,
       "detail": "3 of 4 passages kept",
       "readouts": [
        {
         "question": "MS-2 Repair or replace",
-        "value": "90%"
+        "value": "79%"
        },
        {
         "question": "MS-3 Replacement device",
@@ -2137,15 +2143,15 @@
        },
        {
         "question": "MS-1 How many claims",
-        "value": "70%"
+        "value": "64%"
        },
        {
         "question": "MS-4 Mail-in repair",
-        "value": "10%"
+        "value": "19%"
        }
       ]
      },
-     "at": 8630
+     "at": 867
     },
     {
      "type": "node",
@@ -2153,18 +2159,18 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 8630
+     "at": 867
     },
     {
      "type": "node",
      "node": {
       "id": "rules",
       "status": "done",
-      "ms": 1,
+      "ms": 0,
       "engine": "code",
       "detail": "4 pass · 0 fail · 0 unknown"
      },
-     "at": 8631
+     "at": 867
     },
     {
      "type": "node",
@@ -2172,19 +2178,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 8631
+     "at": 867
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1085,
+      "ms": 1331,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.000446544,
+      "cost": 0.00044894,
       "detail": "4 statements to verify"
      },
-     "at": 9716
+     "at": 2198
     },
     {
      "type": "node",
@@ -2192,36 +2198,36 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 9716
+     "at": 2198
     },
     {
      "type": "node",
      "node": {
       "id": "verify",
       "status": "done",
-      "ms": 3698,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
+      "ms": 58,
+      "engine": "jev-1.14.0",
       "detail": "4 of 4 supported",
       "readouts": [
        {
-        "question": "Your claim for the Pixel 10 Pro is approved.",
-        "value": "100%"
+        "question": "Liquid damage is covered under the Device Protection Plan.",
+        "value": "92%"
        },
        {
-        "question": "Because liquid damage may not be eligible for repair, we will send a…",
-        "value": "100%"
+        "question": "Your claim was filed within the required time.",
+        "value": "98%"
        },
        {
-        "question": "The replacement will be new or reconditioned and carries a 90-day re…",
-        "value": "100%"
+        "question": "You have not used any claims in the last 12 months.",
+        "value": "98%"
        },
        {
-        "question": "The replacement ships within 2 to 10 business days in Canada.",
-        "value": "100%"
+        "question": "Your replacement will be new or reconditioned and shipped within 2 t…",
+        "value": "97%"
        }
       ]
      },
-     "at": 13414
+     "at": 2256
     },
     {
      "type": "node",
@@ -2229,7 +2235,7 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 13414
+     "at": 2256
     },
     {
      "type": "node",
@@ -2242,11 +2248,11 @@
       "readouts": [
        {
         "question": "Risk",
-        "value": "3%"
+        "value": "6%"
        }
       ]
      },
-     "at": 13414
+     "at": 2256
     },
     {
      "type": "node",
@@ -2254,7 +2260,7 @@
       "id": "act",
       "status": "running"
      },
-     "at": 13414
+     "at": 2256
     },
     {
      "type": "node",
@@ -2265,7 +2271,7 @@
       "engine": "code",
       "detail": "Ticket LW-261105-4133 · queue claims"
      },
-     "at": 13415
+     "at": 2257
     }
    ],
    "result": {
@@ -2279,9 +2285,9 @@
      "device": "Pixel 10 Pro"
     },
     "claimType": "liquid_damage",
-    "claimTypeConfidence": 0.83125,
+    "claimTypeConfidence": 1,
     "incidentDate": "2026-11-03",
-    "summary": "Liquid damage claim for Tom's Pixel 10 Pro is approved; all eligibility checks passed under MS-1, and fulfillment is a replacement per MS-2 because liquid damage may not be eligible for repair. Replacement will be new or reconditioned with a 90-day warranty, shipped within 2 to 10 business days in Canada under MS-3.",
+    "summary": "The claim is approved for a replacement device under the Device Protection Plan. All eligibility checks passed: liquid damage is covered, the claim was filed within 60 days, no claims have been used in the last 12 months, and the device value is within the CA$3,500 cap.",
     "route": "approve",
     "routeReason": "Every eligibility check passed.",
     "fulfillment": "replace",
@@ -2321,7 +2327,7 @@
       "heading": "Repair or replace",
       "text": "Location, device make/model, type of damage, and part availability can influence the choice of replacement versus repair. Brand new models may not be available for repair right away, and certain types of damage such as liquid damage may not be eligible for repair.",
       "source": "https://protect.likewize.com/themobileshop/wp-content/themes/themobileshop/resources/2025/10/Device%20Protection%20Plan%20Program%20(For%20Customers%20enrolled%20on%20or%20after%20October%2030,%202025).pdf",
-      "relevance": 0.9
+      "relevance": 0.79
      },
      {
       "id": "MS-3",
@@ -2335,15 +2341,15 @@
       "heading": "How many claims",
       "text": "Your plan provides up to a total of 2 fulfillments (repair or replacement) during a rolling 12-month period for any incident or failure covered under the terms and conditions, up to a $3,500 limit per Service Request/Claim. Repairs or replacements processed under the manufacturer's warranty do not count towards the limit.",
       "source": "https://protect.likewize.com/themobileshop/wp-content/themes/themobileshop/resources/2025/10/Device%20Protection%20Plan%20Program%20(For%20Customers%20enrolled%20on%20or%20after%20October%2030,%202025).pdf",
-      "relevance": 0.7
+      "relevance": 0.64
      }
     ],
-    "reply": "Hello Tom,\n\nYour claim for the Pixel 10 Pro is approved. Because liquid damage may not be eligible for repair, we will send a replacement. It will be new or reconditioned, carries a 90-day replacement warranty, and ships within 2 to 10 business days in Canada.\n\nPlease send photos of the damage and your device IMEI or serial number so we can process the replacement.\n\nLikewize Claims",
+    "reply": "We have approved your claim for a replacement device. Your plan covers liquid damage, and your claim was filed within the required time. You have not used any claims in the last 12 months, and your device value is within the CA$3,500 limit. Your replacement will be new or reconditioned and shipped within 2 to 10 business days in Canada. Please send photos of the damage and your device IMEI or serial number so we can proceed. Likewize Claims",
     "removed": [],
     "nextSteps": [
      "Send photos of the damage",
-     "Send your device IMEI or serial number",
-     "Watch for the replacement shipment within 2 to 10 business days"
+     "Provide your device IMEI or serial number",
+     "Wait for your replacement to ship within 2 to 10 business days"
     ],
     "documents": [
      "Photos of the damage",
@@ -2351,28 +2357,28 @@
     ],
     "statements": [
      {
-      "text": "Your claim for the Pixel 10 Pro is approved.",
+      "text": "Liquid damage is covered under the Device Protection Plan.",
+      "clause": "MS-1",
+      "support": 0.92
+     },
+     {
+      "text": "Your claim was filed within the required time.",
       "clause": "rules",
-      "support": 1
+      "support": 0.98
      },
      {
-      "text": "Because liquid damage may not be eligible for repair, we will send a replacement.",
-      "clause": "MS-2",
-      "support": 1
+      "text": "You have not used any claims in the last 12 months.",
+      "clause": "rules",
+      "support": 0.98
      },
      {
-      "text": "The replacement will be new or reconditioned and carries a 90-day replacement warranty.",
+      "text": "Your replacement will be new or reconditioned and shipped within 2 to 10 business days in Canada.",
       "clause": "MS-3",
-      "support": 1
-     },
-     {
-      "text": "The replacement ships within 2 to 10 business days in Canada.",
-      "clause": "MS-3",
-      "support": 1
+      "support": 0.97
      }
     ],
     "risk": {
-     "score": 0.02500000000000002,
+     "score": 0.06200000000000001,
      "signals": []
     },
     "memory": [
@@ -2381,12 +2387,12 @@
      "Agent recorded that on 2026-11-05 a liquid damage claim was routed to approve after the customer knocked a full cup of coffee onto their phone, and it turned off and will not turn back on even when connected to a charger"
     ],
     "totals": {
-     "ms": 13415,
-     "cost": 0.0009019739999999999,
-     "tokens": 4426
+     "ms": 2257,
+     "cost": 0.0006152330000000001,
+     "tokens": 4268
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
@@ -2401,7 +2407,7 @@
       "id": "intake",
       "status": "running"
      },
-     "at": 1
+     "at": 0
     },
     {
      "type": "node",
@@ -2409,7 +2415,7 @@
       "id": "extract",
       "status": "running"
      },
-     "at": 1
+     "at": 0
     },
     {
      "type": "node",
@@ -2417,40 +2423,17 @@
       "id": "memory",
       "status": "running"
      },
-     "at": 1
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 319,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0001128,
-      "detail": "Incident on 2026-11-03"
-     },
-     "at": 320
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 620,
-      "engine": "Mem0",
-      "detail": "3 past notes"
-     },
-     "at": 621
+     "at": 0
     },
     {
      "type": "node",
      "node": {
       "id": "intake",
       "status": "done",
-      "ms": 5319,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00013914,
-      "detail": "theft · 98% confident",
+      "ms": 90,
+      "engine": "jev-1.14.0",
+      "cost": 0.000033138,
+      "detail": "theft · 100% confident",
       "readouts": [
        {
         "question": "Claim type",
@@ -2458,11 +2441,7 @@
         "dist": [
          {
           "label": "theft",
-          "p": 0.98
-         },
-         {
-          "label": "loss",
-          "p": 0.02
+          "p": 1
          },
          {
           "label": "cracked_glass",
@@ -2471,30 +2450,57 @@
          {
           "label": "accidental_damage",
           "p": 0
+         },
+         {
+          "label": "liquid_damage",
+          "p": 0
          }
         ],
-        "confidence": 0.9774999999999999
+        "confidence": 1
        },
        {
         "question": "Is a claim",
-        "value": "100%"
+        "value": "99%"
        },
        {
         "question": "Instructs the system",
-        "value": "0%"
+        "value": "3%"
        },
        {
         "question": "Specificity",
-        "value": "2.2 of 3",
-        "confidence": 0.8
+        "value": "3.0 of 3",
+        "confidence": 0.96
        },
        {
         "question": "Pushes for outcome",
-        "value": "0%"
+        "value": "21%"
        }
       ]
      },
-     "at": 5320
+     "at": 90
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 314,
+      "engine": "Mem0",
+      "detail": "3 past notes"
+     },
+     "at": 314
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 590,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.00006594,
+      "detail": "Incident on 2026-11-03"
+     },
+     "at": 590
     },
     {
      "type": "node",
@@ -2502,37 +2508,37 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 5320
+     "at": 590
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 1885,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00007395,
+      "ms": 81,
+      "engine": "jev-1.14.0",
+      "cost": 0.000028098,
       "detail": "3 of 4 passages kept",
       "readouts": [
        {
         "question": "MS-3 Replacement device",
-        "value": "10%"
+        "value": "21%"
        },
        {
         "question": "MS-4 Mail-in repair",
-        "value": "10%"
+        "value": "16%"
        },
        {
         "question": "MS-1 How many claims",
-        "value": "80%"
+        "value": "60%"
        },
        {
         "question": "MS-2 Repair or replace",
-        "value": "20%"
+        "value": "21%"
        }
       ]
      },
-     "at": 7205
+     "at": 671
     },
     {
      "type": "node",
@@ -2540,18 +2546,18 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 7205
+     "at": 671
     },
     {
      "type": "node",
      "node": {
       "id": "rules",
       "status": "done",
-      "ms": 1,
+      "ms": 0,
       "engine": "code",
       "detail": "3 pass · 0 fail · 1 unknown"
      },
-     "at": 7206
+     "at": 671
     },
     {
      "type": "node",
@@ -2559,19 +2565,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 7206
+     "at": 671
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1639,
+      "ms": 1566,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.000545544,
+      "cost": 0.00047412,
       "detail": "4 statements to verify"
      },
-     "at": 8845
+     "at": 2237
     },
     {
      "type": "node",
@@ -2579,36 +2585,36 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 8845
+     "at": 2237
     },
     {
      "type": "node",
      "node": {
       "id": "verify",
       "status": "done",
-      "ms": 3880,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
+      "ms": 87,
+      "engine": "jev-1.14.0",
       "detail": "4 of 4 supported",
       "readouts": [
        {
+        "question": "The public The Mobile Shop terms do not say whether theft is covered…",
+        "value": "90%"
+       },
+       {
         "question": "Your claim was filed within the 60-day window.",
-        "value": "100%"
+        "value": "97%"
        },
        {
         "question": "You have 0 of 2 claims used in the last 12 months.",
-        "value": "100%"
+        "value": "98%"
        },
        {
         "question": "The device value of CA$1,100 is within the CA$3,500 cap.",
-        "value": "100%"
-       },
-       {
-        "question": "The public The Mobile Shop terms do not say whether theft is covered…",
-        "value": "80%"
+        "value": "92%"
        }
       ]
      },
-     "at": 12725
+     "at": 2324
     },
     {
      "type": "node",
@@ -2616,7 +2622,7 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 12725
+     "at": 2324
     },
     {
      "type": "node",
@@ -2629,11 +2635,11 @@
       "readouts": [
        {
         "question": "Risk",
-        "value": "8%"
+        "value": "9%"
        }
       ]
      },
-     "at": 12725
+     "at": 2324
     },
     {
      "type": "node",
@@ -2641,18 +2647,18 @@
       "id": "act",
       "status": "running"
      },
-     "at": 12725
+     "at": 2324
     },
     {
      "type": "node",
      "node": {
       "id": "act",
       "status": "done",
-      "ms": 1,
+      "ms": 0,
       "engine": "code",
       "detail": "Ticket LW-261105-4162 · queue handler review"
      },
-     "at": 12726
+     "at": 2324
     }
    ],
    "result": {
@@ -2666,9 +2672,9 @@
      "device": "Pixel 10 Pro"
     },
     "claimType": "theft",
-    "claimTypeConfidence": 0.9774999999999999,
+    "claimTypeConfidence": 1,
     "incidentDate": "2026-11-03",
-    "summary": "Theft claim for a Pixel 10 Pro reported stolen on 2026-11-03, filed within the 60-day window with 0 of 2 claims used and a device value of CA$1,100 against the CA$3,500 cap. Coverage is unknown because the public The Mobile Shop terms do not state whether theft is covered, so the claim is routed to human review.",
+    "summary": "Theft claim for a Pixel 10 Pro reported stolen from a cafe table on 2026-11-03, filed 2 days later. The public The Mobile Shop terms do not state whether theft is covered, so the claim is routed to human review; the timing, claim count, and cap checks all pass.",
     "route": "human_review",
     "routeReason": "The public The Mobile Shop terms do not say whether theft is covered",
     "fulfillment": "replace",
@@ -2708,56 +2714,56 @@
       "heading": "Replacement device",
       "text": "Your replacement will be new or reconditioned. Reconditioned devices look and function like new, and have a 90-day replacement warranty. If approved, your replacement will be shipped within 2 to 10 business days in Canada.",
       "source": "https://protect.likewize.com/themobileshop/wp-content/themes/themobileshop/resources/2025/10/Device%20Protection%20Plan%20Program%20(For%20Customers%20enrolled%20on%20or%20after%20October%2030,%202025).pdf",
-      "relevance": 0.1
+      "relevance": 0.21
      },
      {
       "id": "MS-4",
       "heading": "Mail-in repair",
       "text": "Repair partners accept devices via mail with a prepaid label. The device is repaired and returned within 3 to 5 business days after it is received. All repair work is guaranteed for 90 days.",
       "source": "https://protect.likewize.com/themobileshop/wp-content/themes/themobileshop/resources/2025/10/Device%20Protection%20Plan%20Program%20(For%20Customers%20enrolled%20on%20or%20after%20October%2030,%202025).pdf",
-      "relevance": 0.1
+      "relevance": 0.16
      },
      {
       "id": "MS-1",
       "heading": "How many claims",
       "text": "Your plan provides up to a total of 2 fulfillments (repair or replacement) during a rolling 12-month period for any incident or failure covered under the terms and conditions, up to a $3,500 limit per Service Request/Claim. Repairs or replacements processed under the manufacturer's warranty do not count towards the limit.",
       "source": "https://protect.likewize.com/themobileshop/wp-content/themes/themobileshop/resources/2025/10/Device%20Protection%20Plan%20Program%20(For%20Customers%20enrolled%20on%20or%20after%20October%2030,%202025).pdf",
-      "relevance": 0.8
+      "relevance": 0.6
      }
     ],
-    "reply": "Thanks, Tom. We have logged your theft claim for the Pixel 10 Pro reported stolen on 2026-11-03. Your claim was filed within the 60-day window, you have 0 of 2 claims used in the last 12 months, and the device value of CA$1,100 is within the CA$3,500 cap. The public The Mobile Shop terms do not say whether theft is covered, so a person will review your claim and contact you. Please send photos of the damage and your device IMEI or serial number. Likewize Claims",
+    "reply": "Thanks, Tom. We have logged your theft claim for the Pixel 10 Pro, incident date 2026-11-03. The public The Mobile Shop terms do not say whether theft is covered, so a person will review your claim and confirm the decision. Your claim was filed within the 60-day window, you have 0 of 2 claims used in the last 12 months, and the device value of CA$1,100 is within the CA$3,500 cap. If approved, the fulfillment is a replacement. Likewize Claims",
     "removed": [],
     "nextSteps": [
      "Send photos of the damage",
-     "Send your device IMEI or serial number",
-     "Keep your police report number available",
-     "Wait for the human review outcome"
+     "Send the device IMEI or serial number",
+     "Send the police report number",
+     "Wait for the review decision"
     ],
     "documents": [],
     "statements": [
      {
+      "text": "The public The Mobile Shop terms do not say whether theft is covered, so a person will review your claim and confirm the decision.",
+      "clause": "MS-1",
+      "support": 0.9
+     },
+     {
       "text": "Your claim was filed within the 60-day window.",
       "clause": "rules",
-      "support": 1
+      "support": 0.97
      },
      {
       "text": "You have 0 of 2 claims used in the last 12 months.",
       "clause": "MS-1",
-      "support": 1
+      "support": 0.98
      },
      {
       "text": "The device value of CA$1,100 is within the CA$3,500 cap.",
       "clause": "MS-1",
-      "support": 1
-     },
-     {
-      "text": "The public The Mobile Shop terms do not say whether theft is covered, so a person will review your claim.",
-      "clause": "MS-1",
-      "support": 0.8
+      "support": 0.92
      }
     ],
     "risk": {
-     "score": 0.07999999999999997,
+     "score": 0.08899999999999998,
      "signals": []
     },
     "memory": [
@@ -2766,12 +2772,12 @@
      "Agent recorded that on 2026-11-05 a liquid damage claim was routed to approve after the customer knocked a full cup of coffee onto their phone, and it turned off and will not turn back on even when connected to a charger"
     ],
     "totals": {
-     "ms": 12726,
-     "cost": 0.0010071239999999999,
-     "tokens": 4577
+     "ms": 2324,
+     "cost": 0.0006550980000000001,
+     "tokens": 4429
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
@@ -2807,35 +2813,12 @@
     {
      "type": "node",
      "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 320,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0001083,
-      "detail": "No incident date given"
-     },
-     "at": 320
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 546,
-      "engine": "Mem0",
-      "detail": "4 past notes"
-     },
-     "at": 546
-    },
-    {
-     "type": "node",
-     "node": {
       "id": "intake",
       "status": "done",
-      "ms": 5156,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00013753,
-      "detail": "cosmetic · 89% confident",
+      "ms": 80,
+      "engine": "jev-1.14.0",
+      "cost": 0.000033348,
+      "detail": "cosmetic · 100% confident",
       "readouts": [
        {
         "question": "Claim type",
@@ -2843,14 +2826,14 @@
         "dist": [
          {
           "label": "cosmetic",
-          "p": 0.9
-         },
-         {
-          "label": "accidental_damage",
-          "p": 0.1
+          "p": 1
          },
          {
           "label": "cracked_glass",
+          "p": 0
+         },
+         {
+          "label": "accidental_damage",
           "p": 0
          },
          {
@@ -2858,28 +2841,51 @@
           "p": 0
          }
         ],
-        "confidence": 0.8875000000000002
+        "confidence": 1
        },
        {
         "question": "Is a claim",
-        "value": "100%"
+        "value": "87%"
        },
        {
         "question": "Instructs the system",
-        "value": "0%"
+        "value": "2%"
        },
        {
         "question": "Specificity",
-        "value": "2.2 of 3",
-        "confidence": 0.8
+        "value": "2.9 of 3",
+        "confidence": 0.91
        },
        {
         "question": "Pushes for outcome",
-        "value": "0%"
+        "value": "12%"
        }
       ]
      },
-     "at": 5156
+     "at": 80
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 304,
+      "engine": "Mem0",
+      "detail": "4 past notes"
+     },
+     "at": 304
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 585,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.00006494,
+      "detail": "No incident date given"
+     },
+     "at": 585
     },
     {
      "type": "node",
@@ -2887,37 +2893,37 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 5156
+     "at": 585
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 2565,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00008289,
-      "detail": "4 of 4 passages kept",
+      "ms": 96,
+      "engine": "jev-1.14.0",
+      "cost": 0.000026418,
+      "detail": "2 of 4 passages kept",
       "readouts": [
        {
         "question": "DC-1 What Device Care covers",
-        "value": "98%"
+        "value": "94%"
        },
        {
         "question": "DC-5 Processing fees",
-        "value": "85%"
+        "value": "42%"
        },
        {
         "question": "DC-3 Filing window",
-        "value": "70%"
+        "value": "28%"
        },
        {
         "question": "DC-2 Claim limits",
-        "value": "80%"
+        "value": "33%"
        }
       ]
      },
-     "at": 7721
+     "at": 681
     },
     {
      "type": "node",
@@ -2925,7 +2931,7 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 7721
+     "at": 681
     },
     {
      "type": "node",
@@ -2936,7 +2942,7 @@
       "engine": "code",
       "detail": "2 pass · 1 fail · 1 unknown"
      },
-     "at": 7721
+     "at": 681
     },
     {
      "type": "node",
@@ -2944,19 +2950,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 7721
+     "at": 681
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1294,
+      "ms": 1258,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0007473,
+      "cost": 0.00042258,
       "detail": "4 statements to verify"
      },
-     "at": 9015
+     "at": 1939
     },
     {
      "type": "node",
@@ -2964,36 +2970,36 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 9015
+     "at": 1939
     },
     {
      "type": "node",
      "node": {
       "id": "verify",
       "status": "done",
-      "ms": 5898,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "detail": "4 of 4 supported, one rewrite",
+      "ms": 103,
+      "engine": "jev-1.14.0",
+      "detail": "4 of 4 supported",
       "readouts": [
        {
         "question": "Device Care covers accidental damage from handling and electrical or…",
-        "value": "100%"
+        "value": "94%"
        },
        {
-        "question": "It excludes cosmetic damage.",
-        "value": "100%"
+        "question": "Cosmetic damage, such as scratches, is excluded under DC-1.",
+        "value": "98%"
        },
        {
-        "question": "You can file up to two claims within a rolling 12 month period.",
-        "value": "100%"
+        "question": "Because of this, we cannot approve your claim.",
+        "value": "93%"
        },
        {
-        "question": "Your claim is covered up to the estimated retail value of your devic…",
-        "value": "100%"
+        "question": "No processing fee applies.",
+        "value": "99%"
        }
       ]
      },
-     "at": 14913
+     "at": 2042
     },
     {
      "type": "node",
@@ -3001,7 +3007,7 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 14913
+     "at": 2042
     },
     {
      "type": "node",
@@ -3014,11 +3020,11 @@
       "readouts": [
        {
         "question": "Risk",
-        "value": "8%"
+        "value": "6%"
        }
       ]
      },
-     "at": 14913
+     "at": 2042
     },
     {
      "type": "node",
@@ -3026,7 +3032,7 @@
       "id": "act",
       "status": "running"
      },
-     "at": 14913
+     "at": 2042
     },
     {
      "type": "node",
@@ -3037,7 +3043,7 @@
       "engine": "code",
       "detail": "Ticket LW-261105-2572 · queue claims"
      },
-     "at": 14914
+     "at": 2043
     }
    ],
    "result": {
@@ -3051,9 +3057,9 @@
      "device": "iPhone 15"
     },
     "claimType": "cosmetic",
-    "claimTypeConfidence": 0.8875000000000002,
+    "claimTypeConfidence": 1,
     "incidentDate": null,
-    "summary": "The claim is denied because Device Care excludes cosmetic damage under DC-1. The scratch is cosmetic and the device is otherwise working, so no fulfillment is due.",
+    "summary": "The claim is denied because Device Care excludes cosmetic damage under DC-1. The filing window is unknown because no incident date was provided, but the claim limit and cap checks pass.",
     "route": "deny",
     "routeReason": "Device Care excludes cosmetic",
     "fulfillment": "none",
@@ -3093,63 +3099,63 @@
       "heading": "What Device Care covers",
       "text": "Device Care covers accidental damage from handling as well as electrical and mechanical malfunctions that occur after the manufacturer's warranty has expired. Excludes loss, theft, cosmetic damage, and pre-existing issues.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.98
+      "relevance": 0.94
      },
      {
       "id": "DC-5",
       "heading": "Processing fees",
       "text": "Processing fees start at $39 for screen repairs and range from $99 to $399 for replacement devices. Repairs are covered by a 90-day warranty.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.85
+      "relevance": 0.42
      },
      {
       "id": "DC-3",
       "heading": "Filing window",
       "text": "Claims must be filed within 60 days of the incident, and all required documents, service fees, and fulfillment must be completed within 60 days of filing to keep the claim active. You will need proof of purchase and photos of the damage.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.7
+      "relevance": 0.28
      },
      {
       "id": "DC-2",
       "heading": "Claim limits",
       "text": "Your claim is covered up to the estimated retail value of your device, with a maximum of $3,000. You can file up to two claims within a rolling 12 month period.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.8
+      "relevance": 0.33
      }
     ],
-    "reply": "Dear Lena, we reviewed your claim for the scratch on the back of your iPhone 15. Device Care covers accidental damage from handling and electrical or mechanical malfunctions after the manufacturer's warranty expires. It excludes cosmetic damage. Because the scratch is cosmetic and your phone works, the claim is denied. You can file up to two claims within a rolling 12 month period, and your claim is covered up to the estimated retail value of your device, with a maximum of $3,000. Likewize Claims",
+    "reply": "Dear Lena, we reviewed your claim for the scratch on your iPhone 15. Device Care covers accidental damage from handling and electrical or mechanical malfunctions after the manufacturer's warranty expires. Cosmetic damage, such as scratches, is excluded under DC-1. Because of this, we cannot approve your claim. No processing fee applies. If you believe this decision is incorrect, you may contact us with additional information. Likewize Claims",
     "removed": [],
     "nextSteps": [
-     "Keep your proof of purchase for any future claim",
-     "Take photos of any future damage",
-     "Contact us if the device stops working",
-     "Review your plan terms for what is covered"
+     "Review your Device Care terms for covered damage types.",
+     "Contact us if you have questions about this decision.",
+     "Provide proof of purchase and photos if you file a future claim.",
+     "File any future claim within 60 days of the incident."
     ],
     "documents": [],
     "statements": [
      {
       "text": "Device Care covers accidental damage from handling and electrical or mechanical malfunctions after the manufacturer's warranty expires.",
       "clause": "DC-1",
-      "support": 1
+      "support": 0.94
      },
      {
-      "text": "It excludes cosmetic damage.",
+      "text": "Cosmetic damage, such as scratches, is excluded under DC-1.",
       "clause": "DC-1",
-      "support": 1
+      "support": 0.98
      },
      {
-      "text": "You can file up to two claims within a rolling 12 month period.",
-      "clause": "DC-2",
-      "support": 1
+      "text": "Because of this, we cannot approve your claim.",
+      "clause": "rules",
+      "support": 0.93
      },
      {
-      "text": "Your claim is covered up to the estimated retail value of your device, with a maximum of $3,000.",
-      "clause": "DC-2",
-      "support": 1
+      "text": "No processing fee applies.",
+      "clause": "rules",
+      "support": 0.99
      }
     ],
     "risk": {
-     "score": 0.07999999999999997,
+     "score": 0.056999999999999974,
      "signals": []
     },
     "memory": [
@@ -3159,12 +3165,12 @@
      "Agent recorded that on 2026-11-05 a non-claim request was routed to human_review after the customer wanted to change the credit card used for their monthly Device Care payment"
     ],
     "totals": {
-     "ms": 14914,
-     "cost": 0.001769454,
-     "tokens": 6872
+     "ms": 2043,
+     "cost": 0.000588824,
+     "tokens": 4024
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
@@ -3200,35 +3206,12 @@
     {
      "type": "node",
      "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 316,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0001134,
-      "detail": "Incident on 2025-08-20"
-     },
-     "at": 316
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 363,
-      "engine": "Mem0",
-      "detail": "4 past notes"
-     },
-     "at": 363
-    },
-    {
-     "type": "node",
-     "node": {
       "id": "intake",
       "status": "done",
-      "ms": 6890,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00011878,
-      "detail": "cracked glass · 89% confident",
+      "ms": 118,
+      "engine": "jev-1.14.0",
+      "cost": 0.000033600000000000004,
+      "detail": "cracked glass · 93% confident",
       "readouts": [
        {
         "question": "Claim type",
@@ -3236,11 +3219,11 @@
         "dist": [
          {
           "label": "cracked_glass",
-          "p": 0.9
+          "p": 0.94
          },
          {
           "label": "accidental_damage",
-          "p": 0.1
+          "p": 0.06
          },
          {
           "label": "liquid_damage",
@@ -3251,28 +3234,51 @@
           "p": 0
          }
         ],
-        "confidence": 0.8875000000000002
+        "confidence": 0.93
        },
        {
         "question": "Is a claim",
-        "value": "100%"
+        "value": "97%"
        },
        {
         "question": "Instructs the system",
-        "value": "0%"
+        "value": "3%"
        },
        {
         "question": "Specificity",
-        "value": "2.9 of 3",
-        "confidence": 0.9
+        "value": "3.0 of 3",
+        "confidence": 0.99
        },
        {
         "question": "Pushes for outcome",
-        "value": "0%"
+        "value": "13%"
        }
       ]
      },
-     "at": 6890
+     "at": 118
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 298,
+      "engine": "Mem0",
+      "detail": "4 past notes"
+     },
+     "at": 298
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 626,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.000048146,
+      "detail": "Incident on 2025-08-20"
+     },
+     "at": 626
     },
     {
      "type": "node",
@@ -3280,37 +3286,37 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 6890
+     "at": 626
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 1624,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00007953,
-      "detail": "2 of 4 passages kept",
+      "ms": 74,
+      "engine": "jev-1.14.0",
+      "cost": 0.000030912000000000005,
+      "detail": "3 of 4 passages kept",
       "readouts": [
        {
         "question": "FM-4 Mobile phone deductibles",
-        "value": "100%"
+        "value": "94%"
        },
        {
         "question": "FM-6 Market value",
-        "value": "80%"
+        "value": "57%"
        },
        {
         "question": "FM-2 Claim details",
-        "value": "40%"
+        "value": "52%"
        },
        {
         "question": "FM-5 Exclusions",
-        "value": "10%"
+        "value": "39%"
        }
       ]
      },
-     "at": 8514
+     "at": 700
     },
     {
      "type": "node",
@@ -3318,18 +3324,18 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 8514
+     "at": 700
     },
     {
      "type": "node",
      "node": {
       "id": "rules",
       "status": "done",
-      "ms": 1,
+      "ms": 0,
       "engine": "code",
       "detail": "3 pass · 1 fail · 0 unknown"
      },
-     "at": 8515
+     "at": 700
     },
     {
      "type": "node",
@@ -3337,19 +3343,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 8515
+     "at": 700
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1671,
+      "ms": 1652,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.00081,
+      "cost": 0.000439886,
       "detail": "4 statements to verify"
      },
-     "at": 10186
+     "at": 2352
     },
     {
      "type": "node",
@@ -3357,32 +3363,36 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 10186
+     "at": 2352
     },
     {
      "type": "node",
      "node": {
       "id": "verify",
       "status": "done",
-      "ms": 6040,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "detail": "3 of 3 supported, one rewrite, 1 cut",
+      "ms": 73,
+      "engine": "jev-1.14.0",
+      "detail": "4 of 4 supported",
       "readouts": [
        {
-        "question": "Our records show the claim was filed 77 days after the incident.",
-        "value": "100%"
+        "question": "Cracked glass is covered under Farmers Mobile Device Protection.",
+        "value": "85%"
        },
        {
-        "question": "The plan requires claims to be reported within 60 days of the incide…",
-        "value": "100%"
+        "question": "Claims must be reported within 60 days of the incident.",
+        "value": "99%"
        },
        {
-        "question": "Because this deadline was not met, we cannot approve the claim.",
-        "value": "100%"
+        "question": "Your incident was 77 days before the claim was filed, so the claim i…",
+        "value": "97%"
+       },
+       {
+        "question": "No deductible is charged because the claim was not approved.",
+        "value": "52%"
        }
       ]
      },
-     "at": 16226
+     "at": 2425
     },
     {
      "type": "node",
@@ -3390,7 +3400,7 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 16226
+     "at": 2425
     },
     {
      "type": "node",
@@ -3403,11 +3413,11 @@
       "readouts": [
        {
         "question": "Risk",
-        "value": "1%"
+        "value": "5%"
        }
       ]
      },
-     "at": 16226
+     "at": 2425
     },
     {
      "type": "node",
@@ -3415,18 +3425,18 @@
       "id": "act",
       "status": "running"
      },
-     "at": 16226
+     "at": 2425
     },
     {
      "type": "node",
      "node": {
       "id": "act",
       "status": "done",
-      "ms": 1,
+      "ms": 0,
       "engine": "code",
       "detail": "Ticket LW-261105-2782 · queue claims"
      },
-     "at": 16227
+     "at": 2425
     }
    ],
    "result": {
@@ -3440,9 +3450,9 @@
      "device": "iPhone 16 Pro"
     },
     "claimType": "cracked_glass",
-    "claimTypeConfidence": 0.8875000000000002,
+    "claimTypeConfidence": 0.93,
     "incidentDate": "2026-08-20",
-    "summary": "The claim is denied because the incident was reported 77 days after it occurred, exceeding the 60-day limit in clause FM-2. The cracked glass is a covered peril under FM-1, but the late filing makes the claim ineligible.",
+    "summary": "Cracked glass is a covered peril under FM-1, but the incident was reported 77 days after it occurred, exceeding the 60-day reporting limit in FM-2. The claim is denied on the filing window; no deductible applies because no claim is approved.",
     "route": "deny",
     "routeReason": "Incident 77 days ago; limit is 60",
     "fulfillment": "none",
@@ -3482,14 +3492,21 @@
       "heading": "Mobile phone deductibles",
       "text": "Deductibles depend on the market value of the phone. Front or back glass: $29 in every tier. Other damage: $29 / $49 / $99 / $199 / $199. Loss and theft: $39 / $59 / $150 / $250 / $300, for market value tiers $0 to $249.99, $250 to $499.99, $500 to $999.99, $1,000 to $1,499.99 and $1,500 to $2,500.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 1
+      "relevance": 0.94
      },
      {
       "id": "FM-6",
       "heading": "Market value",
       "text": "Market value is the amount one would receive if selling the covered device on the open market just before it was lost, stolen, or damaged, based on age, condition, and current market demand.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.8
+      "relevance": 0.57
+     },
+     {
+      "id": "FM-2",
+      "heading": "Claim details",
+      "text": "Claims can be filed immediately after enrollment and must be reported within 60 days of the incident. Customers have 30 days from opening a claim to provide all necessary documentation, otherwise the claim will be closed. A non-refundable deductible is required for all claims.",
+      "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
+      "relevance": 0.52
      },
      {
       "id": "FM-1",
@@ -3498,48 +3515,45 @@
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf"
      },
      {
-      "id": "FM-2",
-      "heading": "Claim details",
-      "text": "Claims can be filed immediately after enrollment and must be reported within 60 days of the incident. Customers have 30 days from opening a claim to provide all necessary documentation, otherwise the claim will be closed. A non-refundable deductible is required for all claims.",
-      "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.4
-     },
-     {
       "id": "FM-3",
       "heading": "Claim limits",
       "text": "Accidental Damage from Handling and Mechanical and Electrical Breakdowns: unlimited claims with a cap of $2,500 per approved claim. Loss and Theft: 2 approved claims with a cap of $2,500 per approved claim in any rolling 12-month period.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf"
      }
     ],
-    "reply": "We received your claim for the cracked screen on your iPhone 16 Pro. Our records show the claim was filed 77 days after the incident. The plan requires claims to be reported within 60 days of the incident. Because this deadline was not met, we cannot approve the claim. No deductible applies since the claim is denied. Likewize Claims",
-    "removed": [
-     "The incident happened on August 20, 2026."
-    ],
+    "reply": "Dear Maria, we reviewed your claim for the cracked screen on your iPhone 16 Pro. Cracked glass is covered under your plan, but claims must be reported within 60 days of the incident. Your incident was on August 20, 2026, and we received it 77 days later, so the claim cannot be approved. No deductible is charged because the claim was not approved. If you believe the incident date is incorrect, contact us with details. Likewize Claims",
+    "removed": [],
     "nextSteps": [
-     "Review your plan documents for the 60-day reporting requirement.",
-     "Contact Farmers if you believe the filing date is incorrect.",
-     "Keep your device and any documentation for your records."
+     "Check your records for the exact incident date",
+     "Contact us if the date on file is wrong",
+     "Keep photos of the damage",
+     "Have your device IMEI or serial number ready"
     ],
     "documents": [],
     "statements": [
      {
-      "text": "Our records show the claim was filed 77 days after the incident.",
-      "clause": "rules",
-      "support": 1
+      "text": "Cracked glass is covered under Farmers Mobile Device Protection.",
+      "clause": "FM-1",
+      "support": 0.85
      },
      {
-      "text": "The plan requires claims to be reported within 60 days of the incident.",
+      "text": "Claims must be reported within 60 days of the incident.",
       "clause": "FM-2",
-      "support": 1
+      "support": 0.99
      },
      {
-      "text": "Because this deadline was not met, we cannot approve the claim.",
+      "text": "Your incident was 77 days before the claim was filed, so the claim is denied.",
       "clause": "rules",
-      "support": 1
+      "support": 0.97
+     },
+     {
+      "text": "No deductible is charged because the claim was not approved.",
+      "clause": "rules",
+      "support": 0.52
      }
     ],
     "risk": {
-     "score": 0.009999999999999964,
+     "score": 0.05299999999999999,
      "signals": []
     },
     "memory": [
@@ -3549,12 +3563,12 @@
      "Agent recorded that on 2026-11-05 a theft claim was routed to human_review after the customer's phone was stolen from their bag at a concert on Saturday night"
     ],
     "totals": {
-     "ms": 16227,
-     "cost": 0.0021787,
-     "tokens": 7332
+     "ms": 2425,
+     "cost": 0.000598954,
+     "tokens": 4467
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
@@ -3590,47 +3604,24 @@
     {
      "type": "node",
      "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 289,
-      "engine": "Mem0",
-      "detail": "4 past notes"
-     },
-     "at": 289
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 375,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0001215,
-      "detail": "Incident on 2025-10-30"
-     },
-     "at": 375
-    },
-    {
-     "type": "node",
-     "node": {
       "id": "intake",
       "status": "done",
-      "ms": 5566,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00013753,
-      "detail": "liquid damage · 44% confident",
+      "ms": 108,
+      "engine": "jev-1.14.0",
+      "cost": 0.000033390000000000004,
+      "detail": "natural disaster · 78% confident",
       "readouts": [
        {
         "question": "Claim type",
-        "value": "liquid_damage",
+        "value": "natural_disaster",
         "dist": [
          {
-          "label": "liquid_damage",
-          "p": 0.5
+          "label": "natural_disaster",
+          "p": 0.8
          },
          {
-          "label": "natural_disaster",
-          "p": 0.5
+          "label": "liquid_damage",
+          "p": 0.2
          },
          {
           "label": "cracked_glass",
@@ -3641,28 +3632,51 @@
           "p": 0
          }
         ],
-        "confidence": 0.43750000000000006
+        "confidence": 0.78
        },
        {
         "question": "Is a claim",
-        "value": "100%"
+        "value": "97%"
        },
        {
         "question": "Instructs the system",
-        "value": "0%"
+        "value": "3%"
        },
        {
         "question": "Specificity",
-        "value": "2.9 of 3",
-        "confidence": 0.9
+        "value": "3.0 of 3",
+        "confidence": 0.99
        },
        {
         "question": "Pushes for outcome",
-        "value": "0%"
+        "value": "17%"
        }
       ]
      },
-     "at": 5566
+     "at": 108
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 306,
+      "engine": "Mem0",
+      "detail": "4 past notes"
+     },
+     "at": 306
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 410,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.00007068,
+      "detail": "Incident on 2025-10-30"
+     },
+     "at": 410
     },
     {
      "type": "node",
@@ -3670,37 +3684,37 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 5566
+     "at": 410
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 2721,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00009474,
-      "detail": "4 of 4 passages kept",
+      "ms": 85,
+      "engine": "jev-1.14.0",
+      "cost": 0.000031920000000000006,
+      "detail": "3 of 4 passages kept",
       "readouts": [
        {
         "question": "FM-4 Mobile phone deductibles",
-        "value": "95%"
+        "value": "80%"
        },
        {
         "question": "FM-6 Market value",
-        "value": "85%"
-       },
-       {
-        "question": "FM-1 What is covered",
-        "value": "95%"
+        "value": "50%"
        },
        {
         "question": "FM-2 Claim details",
-        "value": "70%"
+        "value": "36%"
+       },
+       {
+        "question": "FM-1 What is covered",
+        "value": "63%"
        }
       ]
      },
-     "at": 8287
+     "at": 495
     },
     {
      "type": "node",
@@ -3708,7 +3722,7 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 8287
+     "at": 495
     },
     {
      "type": "node",
@@ -3717,9 +3731,9 @@
       "status": "done",
       "ms": 0,
       "engine": "code",
-      "detail": "4 pass · 0 fail · 0 unknown"
+      "detail": "3 pass · 1 fail · 0 unknown"
      },
-     "at": 8287
+     "at": 495
     },
     {
      "type": "node",
@@ -3727,19 +3741,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 8287
+     "at": 495
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1651,
+      "ms": 2040,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0007914,
-      "detail": "4 statements to verify"
+      "cost": 0.000470866,
+      "detail": "3 statements to verify"
      },
-     "at": 9938
+     "at": 2535
     },
     {
      "type": "node",
@@ -3747,36 +3761,32 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 9938
+     "at": 2535
     },
     {
      "type": "node",
      "node": {
       "id": "verify",
       "status": "done",
-      "ms": 2540,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "detail": "4 of 4 supported",
+      "ms": 78,
+      "engine": "jev-1.14.0",
+      "detail": "3 of 3 supported",
       "readouts": [
        {
-        "question": "Liquid damage is covered under Farmers Mobile Device Protection.",
-        "value": "100%"
+        "question": "The Farmers Mobile Device Protection plan does not cover damage from…",
+        "value": "98%"
        },
        {
-        "question": "The claim was filed within 60 days of the October 30 incident.",
-        "value": "100%"
+        "question": "Because of this, we cannot repair, replace, or reimburse the device,…",
+        "value": "83%"
        },
        {
-        "question": "A $99 deductible applies to this repair.",
-        "value": "100%"
-       },
-       {
-        "question": "Photos of the damage and the device IMEI or serial number are requir…",
-        "value": "100%"
+        "question": "The incident was reported within the 60-day window and is within the…",
+        "value": "98%"
        }
       ]
      },
-     "at": 12478
+     "at": 2613
     },
     {
      "type": "node",
@@ -3784,7 +3794,7 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 12478
+     "at": 2613
     },
     {
      "type": "node",
@@ -3793,15 +3803,15 @@
       "status": "done",
       "ms": 0,
       "engine": "code",
-      "detail": "approve → human review",
+      "detail": "Stays deny",
       "readouts": [
        {
         "question": "Risk",
-        "value": "1%"
+        "value": "7%"
        }
       ]
      },
-     "at": 12478
+     "at": 2613
     },
     {
      "type": "node",
@@ -3809,18 +3819,18 @@
       "id": "act",
       "status": "running"
      },
-     "at": 12478
+     "at": 2613
     },
     {
      "type": "node",
      "node": {
       "id": "act",
       "status": "done",
-      "ms": 1,
+      "ms": 0,
       "engine": "code",
-      "detail": "Ticket LW-261105-3733 · queue handler review"
+      "detail": "Ticket LW-261105-3733 · queue claims"
      },
-     "at": 12479
+     "at": 2613
     }
    ],
    "result": {
@@ -3833,25 +3843,20 @@
      "partner": "Farmers",
      "device": "iPhone 16 Pro"
     },
-    "claimType": "liquid_damage",
-    "claimTypeConfidence": 0.43750000000000006,
+    "claimType": "natural_disaster",
+    "claimTypeConfidence": 0.78,
     "incidentDate": "2026-10-30",
-    "summary": "Liquid damage claim approved under Farmers Mobile Device Protection; all eligibility checks passed (FM-1, FM-2, FM-3). Fulfillment is repair with a $99 deductible, and the customer must supply damage photos and the device IMEI or serial number.",
-    "route": "human_review",
-    "routeReason": "Claim type unclear (44% confident) even with a detailed account.",
-    "fulfillment": "repair",
-    "fee": {
-     "amount": 99,
-     "label": "Deductible",
-     "currency": "USD"
-    },
+    "summary": "The claim is denied because the Farmers Mobile Device Protection plan excludes damage from nature, flood, and other Acts of God under clause FM-5. The incident was reported within the 60-day window and is within the $2,500 claim cap, but the covered peril check fails, so no fulfillment is issued.",
+    "route": "deny",
+    "routeReason": "Farmers Mobile Device Protection excludes natural disaster",
+    "fulfillment": "none",
     "checks": [
      {
       "id": "coverage",
       "label": "Covered peril",
-      "status": "pass",
-      "detail": "liquid damage is covered under Farmers Mobile Device Protection",
-      "clause": "FM-1"
+      "status": "fail",
+      "detail": "Farmers Mobile Device Protection excludes natural disaster",
+      "clause": "FM-5"
      },
      {
       "id": "window",
@@ -3881,28 +3886,34 @@
       "heading": "Mobile phone deductibles",
       "text": "Deductibles depend on the market value of the phone. Front or back glass: $29 in every tier. Other damage: $29 / $49 / $99 / $199 / $199. Loss and theft: $39 / $59 / $150 / $250 / $300, for market value tiers $0 to $249.99, $250 to $499.99, $500 to $999.99, $1,000 to $1,499.99 and $1,500 to $2,500.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.95
+      "relevance": 0.8
      },
      {
       "id": "FM-6",
       "heading": "Market value",
       "text": "Market value is the amount one would receive if selling the covered device on the open market just before it was lost, stolen, or damaged, based on age, condition, and current market demand.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.85
+      "relevance": 0.5
      },
      {
       "id": "FM-1",
       "heading": "What is covered",
       "text": "Mobile phones are repaired, replaced or reimbursed at market value for Accidental Damage from Handling and for Mechanical or Electrical Breakdown, and are also reimbursed or replaced due to Loss and Theft. Up to 4 mobile phones per household.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.95
+      "relevance": 0.63
+     },
+     {
+      "id": "FM-5",
+      "heading": "Exclusions",
+      "text": "Coverage does not include damage from nature, flood, war, terrorism, fires, wind, lightning strikes or other Acts of God. Full exclusions are in the insurance policy.",
+      "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf"
      },
      {
       "id": "FM-2",
       "heading": "Claim details",
       "text": "Claims can be filed immediately after enrollment and must be reported within 60 days of the incident. Customers have 30 days from opening a claim to provide all necessary documentation, otherwise the claim will be closed. A non-refundable deductible is required for all claims.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.7
+      "relevance": 0.36
      },
      {
       "id": "FM-3",
@@ -3911,39 +3922,34 @@
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf"
      }
     ],
-    "reply": "Hello Maria, we have approved your claim for the liquid damage to your iPhone 16 Pro from the October 30 flood. Your device will be repaired. A $99 deductible applies. Please send photos of the damage and your device IMEI or serial number within 30 days of opening the claim, or the claim will be closed. Once we receive these, we will arrange the repair. Likewize Claims",
+    "reply": "Dear Maria,\n\nWe reviewed your claim for the iPhone 16 Pro damaged in the flood on October 30, 2026. The Farmers Mobile Device Protection plan does not cover damage from nature, flood, or other Acts of God. This exclusion is stated in clause FM-5. Because of this, we cannot repair, replace, or reimburse the device, and no deductible applies.\n\nYou may wish to check your homeowners or renters insurance for flood coverage.\n\nLikewize Claims",
     "removed": [],
     "nextSteps": [
-     "Send photos of the damaged iPhone 16 Pro",
-     "Send the device IMEI or serial number",
-     "Pay the $99 deductible when it is requested",
-     "Submit the documents within 30 days of opening the claim"
+     "Check your homeowners or renters insurance policy for flood coverage",
+     "Keep photos of the damaged device and any flood damage for your records",
+     "Contact your home insurer to file a claim if covered",
+     "Reply if you have questions about this decision"
     ],
     "documents": [],
     "statements": [
      {
-      "text": "Liquid damage is covered under Farmers Mobile Device Protection.",
-      "clause": "FM-1",
-      "support": 1
+      "text": "The Farmers Mobile Device Protection plan does not cover damage from nature, flood, or other Acts of God.",
+      "clause": "FM-5",
+      "support": 0.98
      },
      {
-      "text": "The claim was filed within 60 days of the October 30 incident.",
-      "clause": "FM-2",
-      "support": 1
+      "text": "Because of this, we cannot repair, replace, or reimburse the device, and no deductible applies.",
+      "clause": "rules",
+      "support": 0.83
      },
      {
-      "text": "A $99 deductible applies to this repair.",
-      "clause": "FM-4",
-      "support": 1
-     },
-     {
-      "text": "Photos of the damage and the device IMEI or serial number are required within 30 days of opening the claim.",
-      "clause": "FM-2",
-      "support": 1
+      "text": "The incident was reported within the 60-day window and is within the $2,500 claim cap.",
+      "clause": "rules",
+      "support": 0.98
      }
     ],
     "risk": {
-     "score": 0.009999999999999964,
+     "score": 0.06899999999999999,
      "signals": []
     },
     "memory": [
@@ -3953,12 +3959,12 @@
      "Agent recorded that on 2026-11-05 a theft claim was routed to human_review after the customer's phone was stolen from their bag at a concert on Saturday night"
     ],
     "totals": {
-     "ms": 12479,
-     "cost": 0.00128374,
-     "tokens": 4872
+     "ms": 2613,
+     "cost": 0.000642178,
+     "tokens": 4313
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
@@ -3994,35 +4000,12 @@
     {
      "type": "node",
      "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 366,
-      "engine": "Mem0",
-      "detail": "4 past notes"
-     },
-     "at": 366
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 523,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0001239,
-      "detail": "Incident on 2026-11-04"
-     },
-     "at": 523
-    },
-    {
-     "type": "node",
-     "node": {
       "id": "intake",
       "status": "done",
-      "ms": 11080,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.0001425,
-      "detail": "cracked glass · 94% confident",
+      "ms": 77,
+      "engine": "jev-1.14.0",
+      "cost": 0.000033936,
+      "detail": "cracked glass · 99% confident",
       "readouts": [
        {
         "question": "Claim type",
@@ -4030,43 +4013,66 @@
         "dist": [
          {
           "label": "cracked_glass",
-          "p": 0.95
+          "p": 0.99
          },
          {
           "label": "accidental_damage",
-          "p": 0.04
-         },
-         {
-          "label": "not_a_claim",
           "p": 0.01
          },
          {
           "label": "liquid_damage",
           "p": 0
+         },
+         {
+          "label": "mechanical_breakdown",
+          "p": 0
          }
         ],
-        "confidence": 0.94375
+        "confidence": 0.99
        },
        {
         "question": "Is a claim",
-        "value": "99%"
+        "value": "97%"
        },
        {
         "question": "Instructs the system",
-        "value": "100%"
+        "value": "98%"
        },
        {
         "question": "Specificity",
-        "value": "2.1 of 3",
-        "confidence": 0.9
+        "value": "2.0 of 3",
+        "confidence": 0.76
        },
        {
         "question": "Pushes for outcome",
-        "value": "95%"
+        "value": "97%"
        }
       ]
      },
-     "at": 11080
+     "at": 77
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 362,
+      "engine": "Mem0",
+      "detail": "4 past notes"
+     },
+     "at": 362
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 491,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.00007231,
+      "detail": "Incident on 2026-11-04"
+     },
+     "at": 491
     },
     {
      "type": "node",
@@ -4074,16 +4080,16 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 11081
+     "at": 491
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 3209,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00007301,
+      "ms": 75,
+      "engine": "jev-1.14.0",
+      "cost": 0.00003234,
       "detail": "4 of 4 passages kept",
       "readouts": [
        {
@@ -4092,19 +4098,19 @@
        },
        {
         "question": "FM-3 Claim limits",
-        "value": "85%"
+        "value": "72%"
        },
        {
         "question": "FM-2 Claim details",
-        "value": "70%"
+        "value": "54%"
        },
        {
         "question": "FM-1 What is covered",
-        "value": "90%"
+        "value": "81%"
        }
       ]
      },
-     "at": 14290
+     "at": 566
     },
     {
      "type": "node",
@@ -4112,7 +4118,7 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 14290
+     "at": 566
     },
     {
      "type": "node",
@@ -4123,7 +4129,7 @@
       "engine": "code",
       "detail": "4 pass · 0 fail · 0 unknown"
      },
-     "at": 14291
+     "at": 567
     },
     {
      "type": "node",
@@ -4131,19 +4137,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 14291
+     "at": 567
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1079,
+      "ms": 1565,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0008217,
+      "cost": 0.00046301,
       "detail": "4 statements to verify"
      },
-     "at": 15370
+     "at": 2132
     },
     {
      "type": "node",
@@ -4151,36 +4157,36 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 15370
+     "at": 2132
     },
     {
      "type": "node",
      "node": {
       "id": "verify",
       "status": "done",
-      "ms": 2454,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "detail": "4 of 4 supported",
+      "ms": 1687,
+      "engine": "jev-1.14.0",
+      "detail": "4 of 4 supported, one rewrite",
       "readouts": [
        {
-        "question": "Your claim for a cracked screen on your iPhone 16 Pro is approved.",
-        "value": "100%"
+        "question": "Your cracked glass claim for the iPhone 16 Pro is approved.",
+        "value": "99%"
        },
        {
-        "question": "The repair will be arranged, and a $29 deductible applies.",
-        "value": "100%"
+        "question": "The plan provides repair for this damage.",
+        "value": "96%"
        },
        {
-        "question": "We cannot provide a new iPhone 17 Pro Max, as the plan covers repair…",
-        "value": "95%"
+        "question": "Your deductible is $29.",
+        "value": "94%"
        },
        {
         "question": "Please send photos of the damage and your device IMEI or serial numb…",
-        "value": "100%"
+        "value": "80%"
        }
       ]
      },
-     "at": 17824
+     "at": 3819
     },
     {
      "type": "node",
@@ -4188,7 +4194,7 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 17824
+     "at": 3819
     },
     {
      "type": "node",
@@ -4201,7 +4207,7 @@
       "readouts": [
        {
         "question": "Risk",
-        "value": "47%"
+        "value": "49%"
        },
        {
         "question": "Pushes for a specific outcome",
@@ -4213,7 +4219,7 @@
        }
       ]
      },
-     "at": 17824
+     "at": 3819
     },
     {
      "type": "node",
@@ -4221,7 +4227,7 @@
       "id": "act",
       "status": "running"
      },
-     "at": 17824
+     "at": 3819
     },
     {
      "type": "node",
@@ -4232,7 +4238,7 @@
       "engine": "code",
       "detail": "Ticket LW-261105-2120 · queue handler review"
      },
-     "at": 17825
+     "at": 3820
     }
    ],
    "result": {
@@ -4246,9 +4252,9 @@
      "device": "iPhone 16 Pro"
     },
     "claimType": "cracked_glass",
-    "claimTypeConfidence": 0.94375,
+    "claimTypeConfidence": 0.99,
     "incidentDate": "2026-11-04",
-    "summary": "The claim is approved for a cracked screen on an iPhone 16 Pro, with a $29 deductible, and fulfillment is by repair. The customer's request for a new iPhone 17 Pro Max is outside the plan rules and cannot be granted.",
+    "summary": "The cracked glass claim is approved under Farmers Mobile Device Protection; all eligibility checks passed. Fulfillment is repair with a $29 deductible, and the requested iPhone 17 Pro Max is not covered by the plan.",
     "route": "human_review",
     "routeReason": "The message contains instructions aimed at the claims system. A person reviews it before anything is sent.",
     "fulfillment": "repair",
@@ -4300,56 +4306,56 @@
       "heading": "Claim limits",
       "text": "Accidental Damage from Handling and Mechanical and Electrical Breakdowns: unlimited claims with a cap of $2,500 per approved claim. Loss and Theft: 2 approved claims with a cap of $2,500 per approved claim in any rolling 12-month period.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.85
+      "relevance": 0.72
      },
      {
       "id": "FM-2",
       "heading": "Claim details",
       "text": "Claims can be filed immediately after enrollment and must be reported within 60 days of the incident. Customers have 30 days from opening a claim to provide all necessary documentation, otherwise the claim will be closed. A non-refundable deductible is required for all claims.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.7
+      "relevance": 0.54
      },
      {
       "id": "FM-1",
       "heading": "What is covered",
       "text": "Mobile phones are repaired, replaced or reimbursed at market value for Accidental Damage from Handling and for Mechanical or Electrical Breakdown, and are also reimbursed or replaced due to Loss and Theft. Up to 4 mobile phones per household.",
       "source": "https://protect.likewize.com/farmers/wp-content/themes/farmers/resources/2026/04/Coverage%20Overview.pdf",
-      "relevance": 0.9
+      "relevance": 0.81
      }
     ],
-    "reply": "Dear Maria, your claim for a cracked screen on your iPhone 16 Pro is approved. The repair will be arranged, and a $29 deductible applies. We cannot provide a new iPhone 17 Pro Max, as the plan covers repair, replacement, or reimbursement at market value for the covered device. Please send photos of the damage and your device IMEI or serial number within 30 days. Likewize Claims",
+    "reply": "Dear Maria, your cracked glass claim for the iPhone 16 Pro is approved. The plan provides repair for this damage, so we cannot ship a new iPhone 17 Pro Max. Your deductible is $29. Please send photos of the damage and your device IMEI or serial number within 30 days. Likewize Claims",
     "removed": [],
     "nextSteps": [
      "Send photos of the cracked screen.",
-     "Provide your device IMEI or serial number.",
+     "Send your device IMEI or serial number.",
      "Pay the $29 deductible.",
      "Wait for repair instructions."
     ],
     "documents": [],
     "statements": [
      {
-      "text": "Your claim for a cracked screen on your iPhone 16 Pro is approved.",
+      "text": "Your cracked glass claim for the iPhone 16 Pro is approved.",
       "clause": "rules",
-      "support": 1
+      "support": 0.99
      },
      {
-      "text": "The repair will be arranged, and a $29 deductible applies.",
-      "clause": "FM-4",
-      "support": 1
-     },
-     {
-      "text": "We cannot provide a new iPhone 17 Pro Max, as the plan covers repair, replacement, or reimbursement at market value for the covered device.",
+      "text": "The plan provides repair for this damage.",
       "clause": "FM-1",
-      "support": 0.95
+      "support": 0.96
+     },
+     {
+      "text": "Your deductible is $29.",
+      "clause": "FM-4",
+      "support": 0.94
      },
      {
       "text": "Please send photos of the damage and your device IMEI or serial number within 30 days.",
       "clause": "FM-2",
-      "support": 1
+      "support": 0.8
      }
     ],
     "risk": {
-     "score": 0.47,
+     "score": 0.486,
      "signals": [
       "Pushes for a specific outcome",
       "Message tries to instruct the system"
@@ -4362,12 +4368,12 @@
      "Agent recorded that on 2026-11-05 a theft claim was routed to human_review after the customer's phone was stolen from their bag at a concert on Saturday night"
     ],
     "totals": {
-     "ms": 17825,
-     "cost": 0.00129854,
-     "tokens": 4859
+     "ms": 3820,
+     "cost": 0.0009579400000000001,
+     "tokens": 7524
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
@@ -4403,34 +4409,11 @@
     {
      "type": "node",
      "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 368,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0001212,
-      "detail": "No incident date given"
-     },
-     "at": 368
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 438,
-      "engine": "Mem0",
-      "detail": "4 past notes"
-     },
-     "at": 438
-    },
-    {
-     "type": "node",
-     "node": {
       "id": "intake",
       "status": "done",
-      "ms": 11046,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00014175,
+      "ms": 90,
+      "engine": "jev-1.14.0",
+      "cost": 0.000032928,
       "detail": "not a claim · 100% confident",
       "readouts": [
        {
@@ -4458,24 +4441,47 @@
        },
        {
         "question": "Is a claim",
-        "value": "0%"
+        "value": "2%"
        },
        {
         "question": "Instructs the system",
-        "value": "0%"
+        "value": "2%"
        },
        {
         "question": "Specificity",
-        "value": "0.0 of 3",
-        "confidence": 1
+        "value": "0.5 of 3",
+        "confidence": 0.5
        },
        {
         "question": "Pushes for outcome",
-        "value": "0%"
+        "value": "6%"
        }
       ]
      },
-     "at": 11046
+     "at": 90
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 310,
+      "engine": "Mem0",
+      "detail": "4 past notes"
+     },
+     "at": 310
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 607,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.00007168,
+      "detail": "No incident date given"
+     },
+     "at": 607
     },
     {
      "type": "node",
@@ -4483,37 +4489,37 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 11046
+     "at": 607
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 2071,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00005287,
+      "ms": 76,
+      "engine": "jev-1.14.0",
+      "cost": 0.000026208,
       "detail": "2 of 4 passages kept",
       "readouts": [
        {
         "question": "DC-1 What Device Care covers",
-        "value": "0%"
+        "value": "12%"
        },
        {
         "question": "DC-2 Claim limits",
-        "value": "0%"
+        "value": "13%"
        },
        {
         "question": "DC-3 Filing window",
-        "value": "0%"
+        "value": "12%"
        },
        {
         "question": "DC-4 When coverage starts",
-        "value": "0%"
+        "value": "15%"
        }
       ]
      },
-     "at": 13117
+     "at": 683
     },
     {
      "type": "node",
@@ -4521,18 +4527,18 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 13117
+     "at": 683
     },
     {
      "type": "node",
      "node": {
       "id": "rules",
       "status": "done",
-      "ms": 1,
+      "ms": 0,
       "engine": "code",
       "detail": "2 pass · 0 fail · 2 unknown"
      },
-     "at": 13118
+     "at": 683
     },
     {
      "type": "node",
@@ -4540,19 +4546,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 13118
+     "at": 683
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1456,
+      "ms": 975,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.000419208,
+      "cost": 0.0003824,
       "detail": "3 statements to verify"
      },
-     "at": 14574
+     "at": 1658
     },
     {
      "type": "node",
@@ -4560,7 +4566,7 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 14574
+     "at": 1658
     },
     {
      "type": "node",
@@ -4570,7 +4576,7 @@
       "ms": 0,
       "detail": "Not a claim, nothing to verify"
      },
-     "at": 14574
+     "at": 1658
     },
     {
      "type": "node",
@@ -4578,7 +4584,7 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 14574
+     "at": 1658
     },
     {
      "type": "node",
@@ -4591,7 +4597,7 @@
       "readouts": [
        {
         "question": "Risk",
-        "value": "30%"
+        "value": "27%"
        },
        {
         "question": "Vague account of what happened",
@@ -4599,7 +4605,7 @@
        }
       ]
      },
-     "at": 14574
+     "at": 1658
     },
     {
      "type": "node",
@@ -4607,7 +4613,7 @@
       "id": "act",
       "status": "running"
      },
-     "at": 14574
+     "at": 1658
     },
     {
      "type": "node",
@@ -4618,7 +4624,7 @@
       "engine": "code",
       "detail": "Ticket LW-261105-9062 · queue customer support"
      },
-     "at": 14575
+     "at": 1659
     }
    ],
    "result": {
@@ -4634,7 +4640,7 @@
     "claimType": "not_a_claim",
     "claimTypeConfidence": 1,
     "incidentDate": null,
-    "summary": "This is not a claim; the customer is asking how to change the credit card used for their monthly Device Care payment. Per policy code, route the request to customer support for handling.",
+    "summary": "This is not a claim; the customer is asking how to change the credit card used for their monthly Device Care payment, so the outcome is redirect to customer support. No coverage, filing window, or document checks apply, and no fulfillment action is taken on the claim file.",
     "route": "redirect",
     "routeReason": "Not a claim. Sent to customer support.",
     "fulfillment": "none",
@@ -4645,35 +4651,35 @@
       "heading": "What Device Care covers",
       "text": "Device Care covers accidental damage from handling as well as electrical and mechanical malfunctions that occur after the manufacturer's warranty has expired. Excludes loss, theft, cosmetic damage, and pre-existing issues.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0
+      "relevance": 0.12
      },
      {
       "id": "DC-2",
       "heading": "Claim limits",
       "text": "Your claim is covered up to the estimated retail value of your device, with a maximum of $3,000. You can file up to two claims within a rolling 12 month period.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0
+      "relevance": 0.13
      },
      {
       "id": "DC-3",
       "heading": "Filing window",
       "text": "Claims must be filed within 60 days of the incident, and all required documents, service fees, and fulfillment must be completed within 60 days of filing to keep the claim active. You will need proof of purchase and photos of the damage.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0
+      "relevance": 0.12
      }
     ],
-    "reply": "Lena, this request is not a claim, so it is handled by customer support rather than the claims team. To change the credit card for your monthly Device Care payment, contact Likewize Device Care customer support directly and they will update your payment method. No claim has been filed and no claim limits are affected. Likewize Claims",
+    "reply": "Hi Lena, thanks for reaching out. Changing the card on your monthly Device Care payment is handled by customer support, not the claims team. Please contact Likewize Device Care support directly and they will update your payment method. Have your policy or account details ready. We cannot change billing details from the claims side. Likewize Claims",
     "removed": [],
     "nextSteps": [
      "Contact Likewize Device Care customer support",
-     "Have your policy or account details ready",
-     "Provide the new card information to support",
-     "Confirm the change took effect on your next billing date"
+     "Have your policy or account number ready",
+     "Ask support to update the card on your monthly payment",
+     "Confirm the change on your next billing statement"
     ],
     "documents": [],
     "statements": [],
     "risk": {
-     "score": 0.3,
+     "score": 0.27299999999999996,
      "signals": [
       "Vague account of what happened"
      ]
@@ -4685,12 +4691,12 @@
      "Agent recorded that on 2026-11-05 a non-claim request was routed to human_review after the customer wanted to change the credit card used for their monthly Device Care payment"
     ],
     "totals": {
-     "ms": 14575,
-     "cost": 0.000735028,
-     "tokens": 3038
+     "ms": 1659,
+     "cost": 0.000513216,
+     "tokens": 2936
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
@@ -4726,35 +4732,12 @@
     {
      "type": "node",
      "node": {
-      "id": "extract",
-      "status": "done",
-      "ms": 782,
-      "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0001077,
-      "detail": "No incident date given"
-     },
-     "at": 782
-    },
-    {
-     "type": "node",
-     "node": {
-      "id": "memory",
-      "status": "done",
-      "ms": 3221,
-      "engine": "Mem0",
-      "detail": "4 past notes"
-     },
-     "at": 3221
-    },
-    {
-     "type": "node",
-     "node": {
       "id": "intake",
       "status": "done",
-      "ms": 7843,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00012103,
-      "detail": "accidental damage · 32% confident",
+      "ms": 113,
+      "engine": "jev-1.14.0",
+      "cost": 0.000032928,
+      "detail": "accidental damage · 36% confident",
       "readouts": [
        {
         "question": "Claim type",
@@ -4762,43 +4745,66 @@
         "dist": [
          {
           "label": "accidental_damage",
-          "p": 0.3999999999999999
+          "p": 0.43
          },
          {
           "label": "mechanical_breakdown",
-          "p": 0.29999999999999993
-         },
-         {
-          "label": "cracked_glass",
-          "p": 0.09999999999999998
+          "p": 0.33
          },
          {
           "label": "not_a_claim",
-          "p": 0.09999999999999998
+          "p": 0.23
+         },
+         {
+          "label": "cracked_glass",
+          "p": 0.01
          }
         ],
-        "confidence": 0.3249999999999999
+        "confidence": 0.36
        },
        {
         "question": "Is a claim",
-        "value": "98%"
+        "value": "89%"
        },
        {
         "question": "Instructs the system",
-        "value": "2%"
+        "value": "23%"
        },
        {
         "question": "Specificity",
-        "value": "1.1 of 3",
-        "confidence": 0.9
+        "value": "1.0 of 3",
+        "confidence": 0.97
        },
        {
         "question": "Pushes for outcome",
-        "value": "95%"
+        "value": "97%"
        }
       ]
      },
-     "at": 7843
+     "at": 113
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "memory",
+      "status": "done",
+      "ms": 378,
+      "engine": "Mem0",
+      "detail": "4 past notes"
+     },
+     "at": 378
+    },
+    {
+     "type": "node",
+     "node": {
+      "id": "extract",
+      "status": "done",
+      "ms": 379,
+      "engine": "deepseek/deepseek-v4.1-flash",
+      "cost": 0.00006304,
+      "detail": "No incident date given"
+     },
+     "at": 379
     },
     {
      "type": "node",
@@ -4806,37 +4812,37 @@
       "id": "retrieve",
       "status": "running"
      },
-     "at": 7843
+     "at": 379
     },
     {
      "type": "node",
      "node": {
       "id": "retrieve",
       "status": "done",
-      "ms": 2529,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "cost": 0.00008181,
-      "detail": "3 of 4 passages kept",
+      "ms": 82,
+      "engine": "jev-1.14.0",
+      "cost": 0.000025830000000000002,
+      "detail": "4 of 4 passages kept",
       "readouts": [
        {
         "question": "DC-1 What Device Care covers",
-        "value": "95%"
+        "value": "87%"
        },
        {
         "question": "DC-3 Filing window",
-        "value": "85%"
+        "value": "49%"
        },
        {
         "question": "DC-2 Claim limits",
-        "value": "90%"
+        "value": "85%"
        },
        {
         "question": "DC-4 When coverage starts",
-        "value": "40%"
+        "value": "57%"
        }
       ]
      },
-     "at": 10372
+     "at": 461
     },
     {
      "type": "node",
@@ -4844,7 +4850,7 @@
       "id": "rules",
       "status": "running"
      },
-     "at": 10372
+     "at": 461
     },
     {
      "type": "node",
@@ -4855,7 +4861,7 @@
       "engine": "code",
       "detail": "3 pass · 0 fail · 1 unknown"
      },
-     "at": 10372
+     "at": 461
     },
     {
      "type": "node",
@@ -4863,19 +4869,19 @@
       "id": "decide",
       "status": "running"
      },
-     "at": 10372
+     "at": 461
     },
     {
      "type": "node",
      "node": {
       "id": "decide",
       "status": "done",
-      "ms": 1610,
+      "ms": 1173,
       "engine": "deepseek/deepseek-v4.1-flash",
-      "cost": 0.0007326,
+      "cost": 0.000394176,
       "detail": "4 statements to verify"
      },
-     "at": 11982
+     "at": 1634
     },
     {
      "type": "node",
@@ -4883,36 +4889,36 @@
       "id": "verify",
       "status": "running"
      },
-     "at": 11982
+     "at": 1634
     },
     {
      "type": "node",
      "node": {
       "id": "verify",
       "status": "done",
-      "ms": 9189,
-      "engine": "stand-in · google/gemma-4-26b-a4b-it",
-      "detail": "4 of 4 supported, one rewrite",
+      "ms": 67,
+      "engine": "jev-1.14.0",
+      "detail": "4 of 4 supported",
       "readouts": [
        {
-        "question": "Device Care covers accidental damage from handling under DC-1.",
-        "value": "100%"
+        "question": "Device Care covers accidental damage.",
+        "value": "98%"
        },
        {
-        "question": "Claims must be filed within 60 days of the incident under DC-3.",
-        "value": "100%"
+        "question": "Claims must be filed within 60 days of the incident.",
+        "value": "98%"
        },
        {
-        "question": "Fulfillment is repair, and the processing fee starts at CA$99.",
-        "value": "100%"
+        "question": "Fulfillment is by repair, not replacement with a new model.",
+        "value": "85%"
        },
        {
-        "question": "We cannot check the filing window yet because the incident date is m…",
-        "value": "100%"
+        "question": "A processing fee from CA$99 applies.",
+        "value": "96%"
        }
       ]
      },
-     "at": 21171
+     "at": 1701
     },
     {
      "type": "node",
@@ -4920,7 +4926,7 @@
       "id": "gate",
       "status": "running"
      },
-     "at": 21171
+     "at": 1701
     },
     {
      "type": "node",
@@ -4933,7 +4939,7 @@
       "readouts": [
        {
         "question": "Risk",
-        "value": "57%"
+        "value": "59%"
        },
        {
         "question": "Pushes for a specific outcome",
@@ -4945,7 +4951,7 @@
        }
       ]
      },
-     "at": 21171
+     "at": 1701
     },
     {
      "type": "node",
@@ -4953,7 +4959,7 @@
       "id": "act",
       "status": "running"
      },
-     "at": 21171
+     "at": 1701
     },
     {
      "type": "node",
@@ -4964,7 +4970,7 @@
       "engine": "code",
       "detail": "Ticket LW-261105-7749 · queue claims"
      },
-     "at": 21171
+     "at": 1701
     }
    ],
    "result": {
@@ -4978,11 +4984,11 @@
      "device": "iPhone 15"
     },
     "claimType": "accidental_damage",
-    "claimTypeConfidence": 0.3249999999999999,
+    "claimTypeConfidence": 0.36,
     "incidentDate": null,
-    "summary": "The claim is accidental damage under Device Care, but the incident date is missing, so the filing window under DC-3 cannot be checked and the outcome is needs_info. Fulfillment is repair, with a processing fee from CA$99, and the customer must provide proof of purchase and photos of the damage.",
+    "summary": "The claim is for accidental damage to an iPhone 15 under Device Care. The incident date is missing, so the filing window cannot be checked; the claim is pending that information.",
     "route": "needs_info",
-    "routeReason": "Not enough detail to tell what kind of claim this is (32% confident). Ask the customer what happened.",
+    "routeReason": "Not enough detail to tell what kind of claim this is (36% confident). Ask the customer what happened.",
     "fulfillment": "repair",
     "fee": {
      "amount": 99,
@@ -5025,30 +5031,37 @@
       "heading": "What Device Care covers",
       "text": "Device Care covers accidental damage from handling as well as electrical and mechanical malfunctions that occur after the manufacturer's warranty has expired. Excludes loss, theft, cosmetic damage, and pre-existing issues.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.95
+      "relevance": 0.87
      },
      {
       "id": "DC-3",
       "heading": "Filing window",
       "text": "Claims must be filed within 60 days of the incident, and all required documents, service fees, and fulfillment must be completed within 60 days of filing to keep the claim active. You will need proof of purchase and photos of the damage.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.85
+      "relevance": 0.49
      },
      {
       "id": "DC-2",
       "heading": "Claim limits",
       "text": "Your claim is covered up to the estimated retail value of your device, with a maximum of $3,000. You can file up to two claims within a rolling 12 month period.",
       "source": "https://protect.likewize.com/devicecare/",
-      "relevance": 0.9
+      "relevance": 0.85
+     },
+     {
+      "id": "DC-4",
+      "heading": "When coverage starts",
+      "text": "If you are enrolling a new device, your coverage starts right away. For bring your own devices, coverage begins 31 days after enrollment.",
+      "source": "https://protect.likewize.com/devicecare/",
+      "relevance": 0.57
      }
     ],
-    "reply": "We received your claim for accidental damage under Device Care. We cannot check the filing window yet because the incident date is missing. Please send the date the damage happened, proof of purchase, and photos of the damage. Device Care covers accidental damage from handling under DC-1. Claims must be filed within 60 days of the incident under DC-3. Fulfillment is repair, and the processing fee starts at CA$99. Likewize Claims",
+    "reply": "We received your claim for accidental damage to your iPhone 15. To check if it was filed in time, we need the date the phone broke. Device Care covers accidental damage, but claims must be filed within 60 days of the incident. Fulfillment is by repair, not replacement with a new model. A processing fee from CA$99 applies. Please send the incident date, proof of purchase, and photos of the damage. Signed, Likewize Claims",
     "removed": [],
     "nextSteps": [
-     "Send the date the damage happened.",
-     "Send proof of purchase.",
-     "Send photos of the damage.",
-     "Wait for the filing window check before sending the device."
+     "Send the date the phone broke.",
+     "Provide proof of purchase.",
+     "Provide photos of the damage.",
+     "Wait for our review before sending the device."
     ],
     "documents": [
      "Proof of purchase",
@@ -5056,28 +5069,28 @@
     ],
     "statements": [
      {
-      "text": "Device Care covers accidental damage from handling under DC-1.",
+      "text": "Device Care covers accidental damage.",
       "clause": "DC-1",
-      "support": 1
+      "support": 0.98
      },
      {
-      "text": "Claims must be filed within 60 days of the incident under DC-3.",
+      "text": "Claims must be filed within 60 days of the incident.",
       "clause": "DC-3",
-      "support": 1
+      "support": 0.98
      },
      {
-      "text": "Fulfillment is repair, and the processing fee starts at CA$99.",
+      "text": "Fulfillment is by repair, not replacement with a new model.",
       "clause": "rules",
-      "support": 1
+      "support": 0.85
      },
      {
-      "text": "We cannot check the filing window yet because the incident date is missing.",
+      "text": "A processing fee from CA$99 applies.",
       "clause": "rules",
-      "support": 1
+      "support": 0.96
      }
     ],
     "risk": {
-     "score": 0.57,
+     "score": 0.585,
      "signals": [
       "Pushes for a specific outcome",
       "Vague account of what happened"
@@ -5090,12 +5103,12 @@
      "Agent recorded that on 2026-11-05 a non-claim request was routed to human_review after the customer wanted to change the credit card used for their monthly Device Care payment"
     ],
     "totals": {
-     "ms": 21171,
-     "cost": 0.0017774860000000002,
-     "tokens": 6800
+     "ms": 1701,
+     "cost": 0.000560662,
+     "tokens": 4079
     },
     "engines": {
-     "classifier": "stand-in · google/gemma-4-26b-a4b-it",
+     "classifier": "jev-1.14.0",
      "reasoning": "deepseek/deepseek-v4.1-flash"
     }
    }
