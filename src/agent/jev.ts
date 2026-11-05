@@ -93,17 +93,23 @@ const Distributions = z.record(z.string(), z.record(z.string(), z.coerce.number(
 
 export async function ask<Q extends Record<string, Question>>(state: unknown, questions: Q, functionId: string): Promise<JevResult<Q>> {
   if (config.typesafeKey) {
-    const res = await fetch("https://api.typesafe.ai/v1/systemone", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${config.typesafeKey}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ model: config.jevModel, state, questions }),
-    });
-    if (!res.ok) throw new Error(`TypeSafe ${res.status}: ${await res.text()}`);
-    const body = (await res.json()) as { model: string; answers: Record<string, Answer>; usage?: { input_tokens?: number } };
-    const usage = emptyUsage();
-    usage.input = body.usage?.input_tokens ?? 0;
-    usage.cost = (usage.input / 1e6) * 0.042;
-    return { answers: body.answers as JevResult<Q>["answers"], engine: body.model, usage };
+    try {
+      const res = await fetch("https://api.typesafe.ai/v1/systemone", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${config.typesafeKey}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ model: config.jevModel, state, questions }),
+        signal: AbortSignal.timeout(8000),
+      });
+      if (!res.ok) throw new Error(`TypeSafe ${res.status}: ${await res.text()}`);
+      const body = (await res.json()) as { model: string; answers: Record<string, Answer>; usage?: { input_tokens?: number } };
+      const usage = emptyUsage();
+      usage.input = body.usage?.input_tokens ?? 0;
+      usage.cost = (usage.input / 1e6) * 0.042;
+      return { answers: body.answers as JevResult<Q>["answers"], engine: body.model, usage };
+    } catch (err) {
+      // TypeSafe down or rate limited: the open model answers the same questions, and the trace says so.
+      console.warn(`[jev] ${functionId} falling back:`, String(err).slice(0, 200));
+    }
   }
 
   const { value, usage, model } = await jsonCall({
